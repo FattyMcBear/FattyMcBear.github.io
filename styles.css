@@ -1,0 +1,295 @@
+/* =====================================================================
+   Project FIZIKA — Editorial design layer
+   Custom CSS that sits on top of Tailwind for the special
+   "scientific journal" touches: variable serif, grain, blueprint grid,
+   drop caps, animated rules, reveal animations, etc.
+   ===================================================================== */
+
+:root {
+  --ink: #16233b;
+  --ink-2: #26344f;
+  --ink-3: #0f1a2e;
+  --paper: #f3ebd9;
+  --sand: #e9dfc8;
+  --sand-2: #e1d6bd;
+  --line: #d8cbaf;
+  --muted: #5b5444;
+  --brass: #c0902b;
+  --brass-ink: #8a5e12;
+  --clay: #a8442a;
+}
+
+/* ---------- Base ---------- */
+* { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+}
+
+::selection { background: var(--ink); color: var(--paper); }
+
+/* Schibsted Grotesk — clean, minimalist display voice. Tighten the
+   tracking a touch so large headings feel deliberate and modern. */
+.font-display {
+  letter-spacing: -0.02em;
+}
+.display-xl { letter-spacing: -0.035em; }
+
+/* Body copy tuning */
+.prose-fizika p { line-height: 1.78; }
+.prose-fizika p + p { margin-top: 1.15rem; }
+
+/* ---------- Eyebrow / mono labels ---------- */
+.eyebrow {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--brass-ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.eyebrow::before {
+  content: "";
+  width: 1.75rem;
+  height: 1px;
+  background: var(--brass);
+  display: inline-block;
+}
+.eyebrow.no-rule::before { display: none; }
+
+/* Section index numerals */
+.index-num {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+  color: var(--clay);
+}
+
+/* ---------- Rules & hairlines ---------- */
+.hairline { border-color: var(--line); }
+.rule-dotted {
+  background-image: linear-gradient(to right, var(--line) 33%, transparent 0%);
+  background-position: bottom;
+  background-size: 8px 1px;
+  background-repeat: repeat-x;
+}
+
+/* ---------- Drop cap ---------- */
+.drop-cap::first-letter {
+  font-family: "Schibsted Grotesk", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 3.4em;
+  line-height: 0.8;
+  float: left;
+  margin: 0.05em 0.12em 0 0;
+  color: var(--clay);
+}
+
+/* ---------- Grain overlay (paper texture) ---------- */
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  opacity: 0.04;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- Blueprint grid (hero atmosphere) ---------- */
+.blueprint {
+  background-image:
+    linear-gradient(to right, rgba(22, 35, 59, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(22, 35, 59, 0.05) 1px, transparent 1px);
+  background-size: 38px 38px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 35%, #000 35%, transparent 78%);
+          mask-image: radial-gradient(ellipse 80% 70% at 50% 35%, #000 35%, transparent 78%);
+}
+
+/* Hero math/physics line-art overlay — fades out toward the headline
+   side so type stays clean, strongest on the right. */
+.hero-figure {
+  -webkit-mask-image: linear-gradient(to left, #000 34%, transparent 86%);
+          mask-image: linear-gradient(to left, #000 34%, transparent 86%);
+}
+.hero-figure .fig-draw {
+  stroke-dasharray: var(--len, 1600);
+  stroke-dashoffset: var(--len, 1600);
+  animation: figdraw 2.4s cubic-bezier(0.45, 0, 0.2, 1) forwards;
+}
+.hero-figure .fig-dot { opacity: 0; animation: figdot 0.5s ease forwards; }
+@keyframes figdraw { to { stroke-dashoffset: 0; } }
+@keyframes figdot { to { opacity: 1; } }
+
+/* Simple-harmonic pendulum — swings around its pivot with gravity-like easing */
+.pendulum-arm {
+  transform-box: view-box;
+  transform-origin: 100px 22px;
+  animation: swing 3.8s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+}
+@keyframes swing {
+  0%,
+  100% { transform: rotate(18deg); }
+  50% { transform: rotate(-18deg); }
+}
+
+/* ---------- Animated underline links ---------- */
+.link-underline {
+  background-image: linear-gradient(var(--brass), var(--brass));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1.5px;
+  transition: background-size 0.35s cubic-bezier(0.4, 0, 0.1, 1), color 0.2s;
+  padding-bottom: 1px;
+}
+.link-underline:hover,
+.link-underline:focus-visible { background-size: 100% 1.5px; color: var(--brass-ink); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  border-radius: 999px;
+  padding: 0.9rem 1.6rem;
+  transition: transform 0.2s ease, background-color 0.25s ease, color 0.25s ease,
+    box-shadow 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+  line-height: 1;
+}
+.btn svg { transition: transform 0.25s ease; }
+.btn-primary { background: var(--ink); color: var(--paper); box-shadow: 0 14px 30px -18px rgba(22,35,59,0.9); }
+.btn-primary:hover { background: var(--ink-3); transform: translateY(-2px); }
+.btn-primary:hover svg { transform: translateX(3px); }
+.btn-ghost { border: 1px solid var(--ink); color: var(--ink); background: transparent; }
+.btn-ghost:hover { background: var(--ink); color: var(--paper); transform: translateY(-2px); }
+.btn-brass { background: var(--brass); color: #2a1d05; box-shadow: 0 14px 30px -18px rgba(192,144,43,0.9); }
+.btn-brass:hover { background: #ad7f1f; transform: translateY(-2px); }
+
+/* ---------- Tags / badges ---------- */
+.tag {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  white-space: nowrap;
+}
+.badge {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.55rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.badge-handout  { background: rgba(22,35,59,0.08);  color: var(--ink); }
+.badge-solution { background: rgba(168,68,42,0.12);  color: var(--clay); }
+.badge-slides   { background: rgba(192,144,43,0.16); color: var(--brass-ink); }
+.badge-dataset  { background: rgba(38,52,79,0.10);   color: var(--ink-2); }
+
+/* ---------- Cards ---------- */
+.card-feature {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.card-feature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px -30px rgba(22, 35, 59, 0.45);
+  border-color: #d6c8a8;
+}
+
+/* Resource row hover */
+.resource-row { transition: background-color 0.2s ease, border-color 0.2s ease; }
+.resource-row:hover { background: var(--sand); }
+
+/* ---------- Sticky header scrolled state ---------- */
+.site-header { transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s; }
+.site-header.scrolled {
+  background: rgba(250, 246, 236, 0.82);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 0 var(--line), 0 18px 30px -28px rgba(22, 35, 59, 0.4);
+}
+
+/* ---------- Ticker ---------- */
+.ticker { overflow: hidden; white-space: nowrap; }
+.ticker__track {
+  display: inline-flex;
+  gap: 3rem;
+  padding-left: 3rem;
+  animation: ticker 38s linear infinite;
+  will-change: transform;
+}
+.ticker:hover .ticker__track { animation-play-state: paused; }
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.ticker__item {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 236, 0.62);
+  display: inline-flex;
+  align-items: center;
+  gap: 3rem;
+}
+.ticker__item::after { content: "✦"; color: var(--brass); }
+
+/* ---------- Reveal animations (progressive enhancement) ---------- */
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+html.js [data-reveal].is-visible { opacity: 1; transform: none; }
+
+/* ---------- Focus visibility ---------- */
+:focus-visible {
+  outline: 2.5px solid var(--clay);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ---------- Mobile menu ---------- */
+#mobileMenu { transition: opacity 0.3s ease, transform 0.35s cubic-bezier(0.16,1,0.3,1); }
+#mobileMenu.hidden-menu { opacity: 0; transform: translateY(-8px); pointer-events: none; }
+
+/* ---------- Misc helpers ---------- */
+.text-balance { text-wrap: balance; }
+.text-pretty { text-wrap: pretty; }
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* Decorative orbit/atom mark stroke */
+.atom-spin { transform-origin: center; animation: spin 18s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  html.js [data-reveal] { opacity: 1 !important; transform: none !important; }
+  .ticker__track { animation: none; }
+  .atom-spin { animation: none; }
+}

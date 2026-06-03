@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project FIZIKA — STEM enrichment, open to all</title>
+  <meta name="description" content="Project FIZIKA is a youth-led initiative making STEM enrichment accessible to every student — free workshops, competition prep, and a growing library of handouts and solutions." />
+  <meta name="theme-color" content="#F3EBD9" />
+
+  <!-- Progressive enhancement flag (no flash of hidden content) -->
+  <script>document.documentElement.classList.add("js");</script>
+
+  <!-- Favicon: atom mark -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316233B'/%3E%3Cg fill='none' stroke='%23C0902B' stroke-width='1.5'%3E%3Cellipse cx='16' cy='16' rx='10' ry='4.5'/%3E%3Cellipse cx='16' cy='16' rx='10' ry='4.5' transform='rotate(60 16 16)'/%3E%3Cellipse cx='16' cy='16' rx='10' ry='4.5' transform='rotate(120 16 16)'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='2.4' fill='%23FAF6EC'/%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind (Play CDN) + shared theme -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/tw-config.js"></script>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+
+<body class="font-sans bg-paper text-ink antialiased overflow-x-hidden">
+  <div class="grain" aria-hidden="true"></div>
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[70] focus:rounded-full focus:bg-ink focus:px-5 focus:py-2 focus:text-paper">Skip to content</a>
+
+  <!-- ============================ HEADER ============================ -->
+  <header class="site-header sticky top-0 z-50 border-b border-transparent">
+    <div class="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-[4.6rem] items-center justify-between gap-4">
+        <!-- Logo -->
+        <a href="index.html" class="group flex items-center gap-3" aria-label="Project FIZIKA — home">
+          <svg class="h-9 w-9 shrink-0" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <rect width="32" height="32" rx="7" fill="#16233B" />
+            <g class="atom-spin" stroke="#C0902B" stroke-width="1.5">
+              <ellipse cx="16" cy="16" rx="10" ry="4.5" />
+              <ellipse cx="16" cy="16" rx="10" ry="4.5" transform="rotate(60 16 16)" />
+              <ellipse cx="16" cy="16" rx="10" ry="4.5" transform="rotate(120 16 16)" />
+            </g>
+            <circle cx="16" cy="16" r="2.4" fill="#FAF6EC" />
+          </svg>
+          <span class="flex flex-col leading-none">
+            <span class="font-display text-[1.35rem] font-600 tracking-tight text-ink">FIZIKA</span>
+            <span class="eyebrow no-rule mt-1 !text-[0.58rem] !tracking-[0.22em]">Project · STEM for all</span>
+          </span>
+        </a>
+
+        <!-- Desktop nav -->
+        <nav class="hidden items-center gap-9 md:flex" aria-label="Primary">
+          <a href="index.html" class="link-underline text-sm font-500 text-ink" aria-current="page">Home</a>
+          <a href="programs.html" class="link-underline text-sm font-500 text-muted hover:text-ink">Programs</a>
+          <a href="resources.html" class="link-underline text-sm font-500 text-muted hover:text-ink">Resources</a>
+          <a href="contact.html" class="link-underline text-sm font-500 text-muted hover:text-ink">Contact</a>
+        </nav>
+
+        <div class="hidden md:block">
+          <a href="contact.html" class="btn btn-primary !px-5 !py-2.5 text-sm">Get involved
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <!-- Mobile toggle -->
+        <button id="menuToggle" class="md:hidden -mr-2 inline-flex h-11 w-11 items-center justify-center rounded-lg text-ink" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden-menu absolute inset-x-0 top-full origin-top border-b border-line bg-paper/95 backdrop-blur-md md:hidden">
+      <nav class="max-w-editorial mx-auto flex flex-col gap-1 px-4 py-5 sm:px-6" aria-label="Mobile">
+        <a href="index.html" class="rounded-lg px-3 py-3 font-display text-2xl text-ink" aria-current="page">Home</a>
+        <a href="programs.html" class="rounded-lg px-3 py-3 font-display text-2xl text-muted hover:bg-sand hover:text-ink">Programs</a>
+        <a href="resources.html" class="rounded-lg px-3 py-3 font-display text-2xl text-muted hover:bg-sand hover:text-ink">Resources</a>
+        <a href="contact.html" class="rounded-lg px-3 py-3 font-display text-2xl text-muted hover:bg-sand hover:text-ink">Contact</a>
+        <a href="contact.html" class="btn btn-primary mt-3">Get involved</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============================ HERO ============================ -->
+    <section class="relative isolate overflow-hidden">
+      <div class="blueprint absolute inset-0 -z-10" aria-hidden="true"></div>
+
+      <!-- Math / physics line-art: one clean sine wave, evenly sampled (stem plot) -->
+      <svg class="hero-figure absolute inset-0 -z-10 h-full w-full" viewBox="0 0 1440 720" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <!-- baseline axis -->
+        <path class="fig-draw" style="--len:1400" d="M40 460 H1400" stroke="#16233B" stroke-opacity="0.14" stroke-width="1.25" stroke-linecap="round"/>
+        <!-- evenly spaced sampling stems -->
+        <g stroke="#16233B" stroke-opacity="0.18" stroke-width="1.25" stroke-linecap="round">
+          <line class="fig-dot" style="animation-delay:0.90s" x1="150" y1="460" x2="150" y2="390"/>
+          <line class="fig-dot" style="animation-delay:1.02s" x1="330" y1="460" x2="330" y2="530"/>
+          <line class="fig-dot" style="animation-delay:1.14s" x1="510" y1="460" x2="510" y2="390"/>
+          <line class="fig-dot" style="animation-delay:1.26s" x1="690" y1="460" x2="690" y2="530"/>
+          <line class="fig-dot" style="animation-delay:1.38s" x1="870" y1="460" x2="870" y2="390"/>
+          <line class="fig-dot" style="animation-delay:1.50s" x1="1050" y1="460" x2="1050" y2="530"/>
+          <line class="fig-dot" style="animation-delay:1.62s" x1="1230" y1="460" x2="1230" y2="390"/>
+        </g>
+        <!-- sine wave -->
+        <path class="fig-draw" style="--len:2200;animation-delay:.1s" d="M60 460 C136 367 164 367 240 460 C316 553 344 553 420 460 C496 367 524 367 600 460 C676 553 704 553 780 460 C856 367 884 367 960 460 C1036 553 1064 553 1140 460 C1216 367 1244 367 1320 460 C1396 553 1424 553 1500 460" stroke="#C0902B" stroke-opacity="0.6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- sample points sitting on the wave -->
+        <g fill="#C0902B">
+          <circle class="fig-dot" style="animation-delay:1.50s" cx="150" cy="390" r="4"/>
+          <circle class="fig-dot" style="animation-delay:1.60s" cx="330" cy="530" r="4"/>
+          <circle class="fig-dot" style="animation-delay:1.70s" cx="510" cy="390" r="4"/>
+          <circle class="fig-dot" style="animation-delay:1.80s" cx="690" cy="530" r="4"/>
+          <circle class="fig-dot" style="animation-delay:1.90s" cx="870" cy="390" r="4"/>
+          <circle class="fig-dot" style="animation-delay:2.00s" cx="1050" cy="530" r="4"/>
+          <circle class="fig-dot" style="animation-delay:2.10s" cx="1230" cy="390" r="4"/>
+        </g>
+      </svg>
+
+      <!-- Minimal pendulum — a quiet nod to physics -->
+      <svg class="pendulum pointer-events-none absolute right-[16%] top-36 -z-10 hidden w-36 lg:block" viewBox="0 0 200 300" fill="none" aria-hidden="true">
+        <defs>
+          <radialGradient id="bobGrad" cx="0.37" cy="0.31" r="0.78" fx="0.30" fy="0.25">
+            <stop offset="0" stop-color="#EFD08A"/>
+            <stop offset="0.46" stop-color="#C5972F"/>
+            <stop offset="1" stop-color="#7C5210"/>
+          </radialGradient>
+          <linearGradient id="rodGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#6A4C16"/>
+            <stop offset="0.5" stop-color="#D6B569"/>
+            <stop offset="1" stop-color="#664916"/>
+          </linearGradient>
+        </defs>
+
+        <!-- ceiling rail + mount plate -->
+        <line x1="50" y1="12" x2="150" y2="12" stroke="#16233B" stroke-opacity="0.18" stroke-width="2" stroke-linecap="round"/>
+        <rect x="84" y="10" width="32" height="12" rx="2.5" fill="#16233B" fill-opacity="0.85"/>
+        <circle cx="91" cy="16" r="1.2" fill="#F3EBD9" fill-opacity="0.55"/>
+        <circle cx="109" cy="16" r="1.2" fill="#F3EBD9" fill-opacity="0.55"/>
+
+        <g class="pendulum-arm">
+          <!-- rod (cylindrical sheen) -->
+          <rect x="98.2" y="22" width="3.6" height="232" rx="1.8" fill="url(#rodGrad)"/>
+          <!-- bob: a simple brass sphere -->
+          <circle cx="100" cy="264" r="18" fill="url(#bobGrad)"/>
+          <ellipse cx="92.5" cy="255.5" rx="6" ry="4.2" fill="#FFF6E0" fill-opacity="0.45" transform="rotate(-32 92.5 255.5)"/>
+        </g>
+
+        <!-- pivot hinge (sits over the rod head) -->
+        <circle cx="100" cy="22" r="4.6" fill="#16233B"/>
+        <circle cx="100" cy="22" r="1.8" fill="#F3EBD9" fill-opacity="0.9"/>
+      </svg>
+
+      <div class="max-w-editorial mx-auto grid grid-cols-1 items-end gap-12 px-4 pb-16 pt-20 sm:px-6 sm:pt-24 lg:grid-cols-12 lg:gap-10 lg:px-8 lg:pb-24 lg:pt-28">
+        <div class="lg:col-span-8">
+          <p class="eyebrow mb-7" data-reveal>Est. 2024 — STEM, made accessible</p>
+          <h1 class="display-xl font-display text-[clamp(2.9rem,8vw,6.2rem)] font-500 leading-[0.95] tracking-tight text-balance" data-reveal data-reveal-delay="60">
+            Make STEM make sense&nbsp;— <span class="italic text-clay">for every student.</span>
+          </h1>
+          <p class="mt-8 max-w-prose text-lg leading-relaxed text-muted sm:text-xl" data-reveal data-reveal-delay="140">
+            Project FIZIKA is a youth-led initiative breaking down the cost and confidence barriers to STEM enrichment. Free workshops, competition prep, and a growing open library of handouts &amp; solutions — built by students, for students.
+          </p>
+
+          <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center" data-reveal data-reveal-delay="220">
+            <a href="programs.html" class="btn btn-primary">Explore our programs
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="resources.html" class="btn btn-ghost">Browse the resource library</a>
+          </div>
+
+          <p class="eyebrow no-rule mt-9 !text-muted/80" data-reveal data-reveal-delay="300">Always free &nbsp;//&nbsp; Student-led &nbsp;//&nbsp; Open to all</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ TICKER ============================ -->
+    <div class="ticker border-y border-ink-2/60 bg-ink py-3.5" aria-hidden="true">
+      <div class="ticker__track">
+        <span class="ticker__item">Mechanics</span><span class="ticker__item">Calculus</span>
+        <span class="ticker__item">Linear Algebra</span><span class="ticker__item">Electromagnetism</span>
+        <span class="ticker__item">Olympiad Prep</span><span class="ticker__item">Algorithms</span>
+        <span class="ticker__item">Statics</span><span class="ticker__item">Thermodynamics</span>
+        <span class="ticker__item">Mechanics</span><span class="ticker__item">Calculus</span>
+        <span class="ticker__item">Linear Algebra</span><span class="ticker__item">Electromagnetism</span>
+        <span class="ticker__item">Olympiad Prep</span><span class="ticker__item">Algorithms</span>
+        <span class="ticker__item">Statics</span><span class="ticker__item">Thermodynamics</span>
+      </div>
+    </div>
+
+    <!-- ============================ MISSION ============================ -->
+    <section class="border-b border-line">
+      <div class="max-w-editorial mx-auto grid grid-cols-1 gap-10 px-4 py-20 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-8 lg:py-28">
+        <div class="lg:col-span-4" data-reveal>
+          <p class="eyebrow mb-5">01 — Our mission</p>
+          <h2 class="font-display text-4xl font-500 leading-tight tracking-tight sm:text-5xl text-balance">
+            Curiosity shouldn’t depend on a&nbsp;price&nbsp;tag.
+          </h2>
+        </div>
+        <div class="prose-fizika lg:col-span-7 lg:col-start-6" data-reveal data-reveal-delay="120">
+          <p class="drop-cap text-lg text-ink/90">
+            Too many bright, curious students hit a wall the moment enrichment carries a fee — the prep course, the tutor, the competition registration. Project FIZIKA exists to dismantle that wall. We’re a team of high-school and university students who believe rigorous STEM learning should be a public good, not a private purchase.
+          </p>
+          <p class="text-lg text-muted">
+            We design our own handouts, write full worked solutions, and run live sessions where asking “wait, why?” is the whole point. Everything we make is free to use, share, and build on — because the fastest way to grow the next generation of scientists is to stop making them pay for the door.
+          </p>
+          <p class="mt-6">
+            <a href="programs.html" class="link-underline font-600 text-ink">See how we put this into practice
+              <span aria-hidden="true">→</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ STATS ============================ -->
+    <section class="bg-sand/50 border-b border-line">
+      <div class="max-w-editorial mx-auto px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div class="grid grid-cols-2 gap-x-6 gap-y-12 lg:grid-cols-4">
+          <div data-reveal>
+            <div class="font-display text-5xl font-500 text-ink tabular sm:text-6xl"><span data-reveal data-count="1200" data-suffix="+">1,200+</span></div>
+            <p class="eyebrow no-rule mt-3 !text-muted">Students reached</p>
+          </div>
+          <div data-reveal data-reveal-delay="100">
+            <div class="font-display text-5xl font-500 text-ink tabular sm:text-6xl"><span data-reveal data-count="140" data-suffix="+">140+</span></div>
+            <p class="eyebrow no-rule mt-3 !text-muted">Free resources published</p>
+          </div>
+          <div data-reveal data-reveal-delay="200">
+            <div class="font-display text-5xl font-500 text-ink tabular sm:text-6xl"><span data-reveal data-count="85" data-suffix="">85</span></div>
+            <p class="eyebrow no-rule mt-3 !text-muted">Workshops run</p>
+          </div>
+          <div data-reveal data-reveal-delay="300">
+            <div class="font-display text-5xl font-500 text-ink tabular sm:text-6xl"><span data-reveal data-count="18" data-suffix="">18</span></div>
+            <p class="eyebrow no-rule mt-3 !text-muted">Partner schools &amp; clubs</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ PROGRAMS PREVIEW ============================ -->
+    <section class="border-b border-line">
+      <div class="max-w-editorial mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between" data-reveal>
+          <div class="max-w-2xl">
+            <p class="eyebrow mb-5">02 — What we do</p>
+            <h2 class="font-display text-4xl font-500 leading-tight tracking-tight sm:text-5xl text-balance">Programs that meet students where they are.</h2>
+          </div>
+          <a href="programs.html" class="link-underline shrink-0 font-600 text-ink">All programs <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <a href="programs.html" class="card-feature group flex flex-col p-7" data-reveal>
+            <div class="flex items-start justify-between">
+              <span class="index-num text-sm">01</span>
+              <span class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink transition-colors group-hover:bg-ink group-hover:text-paper">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0V4z"/><path d="M17 5h2a2 2 0 010 4h-2M7 5H5a2 2 0 000 4h2" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+            <h3 class="mt-6 font-display text-2xl font-500 text-ink">Olympiad &amp; Contest Prep</h3>
+            <p class="mt-3 flex-1 text-muted">AMC, F=ma and beyond — drills, strategy clinics, and feedback on full written solutions.</p>
+            <span class="mt-6 inline-flex items-center gap-2 text-sm font-600 text-brass-ink">Learn more
+              <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+
+          <a href="resources.html" class="card-feature group flex flex-col p-7" data-reveal data-reveal-delay="100">
+            <div class="flex items-start justify-between">
+              <span class="index-num text-sm">02</span>
+              <span class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink transition-colors group-hover:bg-ink group-hover:text-paper">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+              </span>
+            </div>
+            <h3 class="mt-6 font-display text-2xl font-500 text-ink">The Open Library</h3>
+            <p class="mt-3 flex-1 text-muted">140+ free handouts and worked solutions, written in-house. Always growing, always open.</p>
+            <span class="mt-6 inline-flex items-center gap-2 text-sm font-600 text-brass-ink">Browse
+              <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+
+          <a href="programs.html" class="card-feature group flex flex-col p-7" data-reveal data-reveal-delay="200">
+            <div class="flex items-start justify-between">
+              <span class="index-num text-sm">03</span>
+              <span class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink transition-colors group-hover:bg-ink group-hover:text-paper">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0111 0M16 6.2a3 3 0 010 5.6M19 19.5a5 5 0 00-3.2-4.5" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+            <h3 class="mt-6 font-display text-2xl font-500 text-ink">STEM Workshops</h3>
+            <p class="mt-3 flex-1 text-muted">Hands-on, concept-first sessions in physics and math where every “wait, why?” is welcome.</p>
+            <span class="mt-6 inline-flex items-center gap-2 text-sm font-600 text-brass-ink">Learn more
+              <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+
+          <a href="programs.html" class="card-feature group flex flex-col p-7" data-reveal data-reveal-delay="300">
+            <div class="flex items-start justify-between">
+              <span class="index-num text-sm">04</span>
+              <span class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink transition-colors group-hover:bg-ink group-hover:text-paper">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 15a2 2 0 01-2 2H8l-4 4V5a2 2 0 012-2h13a2 2 0 012 2z" stroke-linejoin="round"/><path d="M8 9h8M8 12.5h5" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+            <h3 class="mt-6 font-display text-2xl font-500 text-ink">STEM Outreach</h3>
+            <p class="mt-3 flex-1 text-muted">Talks, panels, and open dialogues showing what STEM looks like beyond the textbook.</p>
+            <span class="mt-6 inline-flex items-center gap-2 text-sm font-600 text-brass-ink">Learn more
+              <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ APPROACH ============================ -->
+    <section class="border-b border-line bg-sand/40">
+      <div class="max-w-editorial mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div class="max-w-2xl" data-reveal>
+          <p class="eyebrow mb-5">03 — How we teach</p>
+          <h2 class="font-display text-4xl font-500 leading-tight tracking-tight sm:text-5xl text-balance">Four principles behind everything we make.</h2>
+        </div>
+
+        <div class="mt-14 grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2">
+          <div class="flex gap-5" data-reveal>
+            <span class="index-num pt-1 text-lg">I.</span>
+            <div>
+              <h3 class="font-display text-2xl font-500 text-ink">Intuition before formulas</h3>
+              <p class="mt-2 text-muted">We start with the picture and the “why,” then earn the equation. Memorizing comes last, if at all.</p>
+            </div>
+          </div>
+          <div class="flex gap-5" data-reveal data-reveal-delay="100">
+            <span class="index-num pt-1 text-lg">II.</span>
+            <div>
+              <h3 class="font-display text-2xl font-500 text-ink">Free, forever</h3>
+              <p class="mt-2 text-muted">No paywalls, no “premium” tier. If we make it, you can have it — and so can your whole class.</p>
+            </div>
+          </div>
+          <div class="flex gap-5" data-reveal data-reveal-delay="160">
+            <span class="index-num pt-1 text-lg">III.</span>
+            <div>
+              <h3 class="font-display text-2xl font-500 text-ink">Near-peer mentorship</h3>
+              <p class="mt-2 text-muted">Our teachers were in your seat last year. They remember exactly where it gets confusing.</p>
+            </div>
+          </div>
+          <div class="flex gap-5" data-reveal data-reveal-delay="220">
+            <span class="index-num pt-1 text-lg">IV.</span>
+            <div>
+              <h3 class="font-display text-2xl font-500 text-ink">Show the full working</h3>
+              <p class="mt-2 text-muted">Every solution we publish is complete and honest — no “it can be shown that.” You see every step.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ FEATURED RESOURCES ============================ -->
+    <section class="border-b border-line">
+      <div class="max-w-editorial mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between" data-reveal>
+          <div class="max-w-2xl">
+            <p class="eyebrow mb-5">04 — From the library</p>
+            <h2 class="font-display text-4xl font-500 leading-tight tracking-tight sm:text-5xl text-balance">Fresh off the press.</h2>
+          </div>
+          <a href="resources.html" class="link-underline shrink-0 font-600 text-ink">Open the full library <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="mt-12 divide-y divide-line border-y border-line">
+          <a href="resources.html" class="group flex items-center gap-5 py-5 transition-colors hover:bg-sand/60 sm:gap-8" data-reveal>
+            <span class="index-num hidden w-10 shrink-0 text-sm sm:block">141</span>
+            <div class="flex-1">
+              <div class="mb-2 flex flex-wrap items-center gap-2">
+                <span class="badge badge-handout">Handout</span><span class="tag">Physics</span>
+              </div>
+              <h3 class="font-display text-xl font-500 text-ink sm:text-2xl">Rotational Dynamics, From Scratch</h3>
+            </div>
+            <span class="hidden text-sm text-muted sm:block">PDF · 14 pp</span>
+            <svg class="h-5 w-5 shrink-0 text-muted transition-transform group-hover:translate-x-1 group-hover:text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="resources.html" class="group flex items-center gap-5 py-5 transition-colors hover:bg-sand/60 sm:gap-8" data-reveal data-reveal-delay="80">
+            <span class="index-num hidden w-10 shrink-0 text-sm sm:block">140</span>
+            <div class="flex-1">
+              <div class="mb-2 flex flex-wrap items-center gap-2">
+                <span class="badge badge-solution">Solutions</span><span class="tag">Calculus</span>
+              </div>
+              <h3 class="font-display text-xl font-500 text-ink sm:text-2xl">Integration by Parts — 30 Worked Problems</h3>
+            </div>
+            <span class="hidden text-sm text-muted sm:block">PDF · 22 pp</span>
+            <svg class="h-5 w-5 shrink-0 text-muted transition-transform group-hover:translate-x-1 group-hover:text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="resources.html" class="group flex items-center gap-5 py-5 transition-colors hover:bg-sand/60 sm:gap-8" data-reveal data-reveal-delay="160">
+            <span class="index-num hidden w-10 shrink-0 text-sm sm:block">139</span>
+            <div class="flex-1">
+              <div class="mb-2 flex flex-wrap items-center gap-2">
+                <span class="badge badge-slides">Slides</span><span class="tag">Mathematics</span>
+              </div>
+              <h3 class="font-display text-xl font-500 text-ink sm:text-2xl">Linear Algebra: Vectors to Matrices</h3>
+            </div>
+            <span class="hidden text-sm text-muted sm:block">PDF · 31 pp</span>
+            <svg class="h-5 w-5 shrink-0 text-muted transition-transform group-hover:translate-x-1 group-hover:text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ QUOTE ============================ -->
+    <section class="bg-ink text-paper">
+      <div class="max-w-editorial mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <figure class="mx-auto max-w-4xl text-center" data-reveal>
+          <svg class="mx-auto mb-8 h-10 w-10 text-brass" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.5 7H6a3 3 0 00-3 3v7h7v-7H6.5A1.5 1.5 0 018 8.5V7zm9 0H15a3 3 0 00-3 3v7h7v-7h-3.5A1.5 1.5 0 0117 8.5V7z"/></svg>
+          <blockquote class="font-display text-3xl font-400 leading-snug tracking-tight sm:text-[2.6rem] text-balance">
+            “I never thought I could ‘do physics.’ FIZIKA didn’t hand me answers — they taught me how to find them. I’m studying engineering now.”
+          </blockquote>
+          <figcaption class="mt-9 eyebrow no-rule justify-center !text-paper/60">
+            Amara · Class of ’25 · former FIZIKA student
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============================ TEAM ============================ -->
+    <section class="border-b border-line">
+      <div class="max-w-editorial mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div class="max-w-2xl" data-reveal>
+          <p class="eyebrow mb-5">05 — The team</p>
+          <h2 class="font-display text-4xl font-500 leading-tight tracking-tight sm:text-5xl text-balance">The students behind FIZIKA.</h2>
+          <p class="mt-5 text-lg text-muted">A volunteer crew of high-school and university students who teach, write, and organise — because they wish something like this had existed for them.</p>
+        </div>
+
+        <div class="mt-16 grid grid-cols-2 gap-x-6 gap-y-12 sm:grid-cols-3 lg:grid-cols-4">
+          <div class="group flex flex-col items-center text-center" data-reveal>
+            <div class="mb-4 flex h-28 w-28 items-center justify-center rounded-full border border-line bg-sand-2 font-display text-2xl font-500 text-ink/75 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brass">MO</div>
+            <h3 class="font-display text-lg font-500 text-ink">Maya Okafor</h3>
+            <p class="eyebrow no-rule mt-1.5 !text-[0.62rem] !text-muted">Founder &amp; Director</p>
+          </div>
+          <div class="group flex flex-col items-center text-center" data-reveal data-reveal-delay="80">
+            <div class="mb-4 flex h-28 w-28 items-center justify-center rounded-full border border-line bg-sand-2 font-display text-2xl font-500 text-ink/75 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brass">DR</div>
+            <h3 class="font-display text-lg font-500 text-ink">Daniel Reyes</h3>
+            <p class="eyebrow no-rule mt-1.5 !text-[0.62rem] !text-muted">Physics Lead</p>
+          </div>
+          <div class="group flex flex-col items-center text-center" data-reveal data-reveal-delay="160">
+            <div class="mb-4 flex h-28 w-28 items-center justify-center rounded-full border border-line bg-sand-2 font-display text-2xl font-500 text-ink/75 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brass">PN</div>
+            <h3 class="font-display text-lg font-500 text-ink">Priya Nair</h3>
+            <p class="eyebrow no-rule mt-1.5 !text-[0.62rem] !text-muted">Mathematics Lead</p>
+          </div>
+          <div class="group flex flex-col items-center text-center" data-reveal data-reveal-delay="240">
+            <div class="mb-4 flex h-28 w-28 items-center justify-center rounded-full border border-line bg-sand-2 font-display text-2xl font-500 text-ink/75 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brass">LW</div>
+            <h3 class="font-display text-lg font-500 text-ink">Liam Walsh</h3>
+            <p class="eyebrow no-rule mt-1.5 !text-[0.62rem] !text-muted">Olympiad Coach</p>
+          </div>
+          <div class="group flex flex-col items-center text-center" data-reveal>
+            <div class="mb-4 flex h-28 w-28 items-center justify-center rounded-full border border-line bg-sand-2 font-display text-2xl font-500 text-ink/75 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brass">SA</div>
+            <h3 class="font-display text-lg font-500 text-ink">Sofia Andersson</h3>
+            <p class="eyebrow no-rule mt-1.5 !text-[0.62rem] !text-muted">Workshops Lead</p>
+          </div>
+          <div class="group flex flex-col items-center text-center" data-reveal data-reveal-delay="80">
+            <div class="mb-4 flex h-28 w-28 items-center justify-center rounded-full border border-line bg-sand-2 font-display text-2xl font-500 text-ink/75 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brass">KT</div>
+            <h3 class="font-display text-lg font-500 text-ink">Kenji Tanaka</h3>
+            <p class="eyebrow no-rule mt-1.5 !text-[0.62rem] !text-muted">Resources Editor</p>
+          </div>
+          <div class="group flex flex-col items-center text-center" data-reveal data-reveal-delay="160">
+            <div class="mb-4 flex h-28 w-28 items-center justify-center rounded-full border border-line bg-sand-2 font-display text-2xl font-500 text-ink/75 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brass">AM</div>
+            <h3 class="font-display text-lg font-500 text-ink">Aisha Mensah</h3>
+            <p class="eyebrow no-rule mt-1.5 !text-[0.62rem] !text-muted">Outreach Lead</p>
+          </div>
+          <div class="group flex flex-col items-center text-center" data-reveal data-reveal-delay="240">
+            <div class="mb-4 flex h-28 w-28 items-center justify-center rounded-full border border-line bg-sand-2 font-display text-2xl font-500 text-ink/75 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brass">NB</div>
+            <h3 class="font-display text-lg font-500 text-ink">Noah Bergström</h3>
+            <p class="eyebrow no-rule mt-1.5 !text-[0.62rem] !text-muted">Partnerships</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ GET INVOLVED CTA ============================ -->
+    <section class="relative isolate overflow-hidden border-t border-line">
+      <div class="absolute -left-40 bottom-0 -z-10 h-[28rem] w-[28rem] rounded-full bg-clay/10 blur-3xl" aria-hidden="true"></div>
+      <div class="max-w-editorial mx-auto grid grid-cols-1 gap-10 px-4 py-20 sm:px-6 lg:grid-cols-12 lg:items-center lg:px-8 lg:py-28">
+        <div class="lg:col-span-7" data-reveal>
+          <p class="eyebrow mb-5">06 — Join the project</p>
+          <h2 class="font-display text-4xl font-500 leading-tight tracking-tight sm:text-5xl lg:text-6xl text-balance">
+            Teach, partner, or simply spread the word.
+          </h2>
+          <p class="mt-6 max-w-prose text-lg text-muted">
+            We’re always looking for student volunteers, schools to partner with, and supporters who believe STEM should be open to all. There’s a place here for you.
+          </p>
+        </div>
+        <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:col-span-5 lg:justify-end" data-reveal data-reveal-delay="120">
+          <a href="contact.html" class="btn btn-primary">Get in touch
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="programs.html" class="btn btn-ghost">See our programs</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="bg-ink-3 text-paper">
+    <div class="max-w-editorial mx-auto px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <div class="grid grid-cols-2 gap-10 sm:grid-cols-4 lg:grid-cols-12 lg:gap-8">
+        <div class="col-span-2 lg:col-span-5">
+          <a href="index.html" class="flex items-center gap-3" aria-label="Project FIZIKA — home">
+            <svg class="h-9 w-9" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <rect width="32" height="32" rx="7" fill="#16233B" />
+              <g stroke="#C0902B" stroke-width="1.5"><ellipse cx="16" cy="16" rx="10" ry="4.5"/><ellipse cx="16" cy="16" rx="10" ry="4.5" transform="rotate(60 16 16)"/><ellipse cx="16" cy="16" rx="10" ry="4.5" transform="rotate(120 16 16)"/></g>
+              <circle cx="16" cy="16" r="2.4" fill="#FAF6EC" />
+            </svg>
+            <span class="font-display text-2xl font-600">FIZIKA</span>
+          </a>
+          <p class="mt-5 max-w-sm text-paper/65">Youth-led STEM enrichment, open to all. We build free resources and run free programs so curiosity never hits a paywall.</p>
+          <div class="mt-7 flex items-center gap-3">
+            <a href="contact.html" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-paper/20 text-paper/80 transition-colors hover:border-brass hover:text-brass" aria-label="Instagram">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="contact.html" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-paper/20 text-paper/80 transition-colors hover:border-brass hover:text-brass" aria-label="LinkedIn">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 7.5a1.94 1.94 0 11.01-3.88A1.94 1.94 0 016.94 7.5zM5.3 9h3.3v10.5H5.3V9zm5.2 0h3.16v1.43h.05c.44-.83 1.5-1.7 3.1-1.7 3.32 0 3.93 2.18 3.93 5.02v5.75h-3.3v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.33-1.96 2.7v5.18H10.5V9z"/></svg>
+            </a>
+            <a href="contact.html" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-paper/20 text-paper/80 transition-colors hover:border-brass hover:text-brass" aria-label="YouTube">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2a2.7 2.7 0 00-1.9-1.9C18 4.8 12 4.8 12 4.8s-6 0-7.7.5A2.7 2.7 0 002.4 7.2 28 28 0 002 12a28 28 0 00.4 4.8 2.7 2.7 0 001.9 1.9c1.7.5 7.7.5 7.7.5s6 0 7.7-.5a2.7 2.7 0 001.9-1.9A28 28 0 0022 12a28 28 0 00-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 lg:col-start-7">
+          <p class="eyebrow no-rule mb-4 !text-paper/40">Explore</p>
+          <ul class="space-y-3 text-paper/75">
+            <li><a href="index.html" class="link-underline">Home</a></li>
+            <li><a href="programs.html" class="link-underline">Programs</a></li>
+            <li><a href="resources.html" class="link-underline">Resources</a></li>
+            <li><a href="contact.html" class="link-underline">Contact</a></li>
+          </ul>
+        </div>
+        <div class="lg:col-span-2">
+          <p class="eyebrow no-rule mb-4 !text-paper/40">Library</p>
+          <ul class="space-y-3 text-paper/75">
+            <li><a href="resources.html" class="link-underline">Physics</a></li>
+            <li><a href="resources.html" class="link-underline">Mathematics</a></li>
+            <li><a href="resources.html" class="link-underline">Engineering</a></li>
+            <li><a href="resources.html" class="link-underline">Computing</a></li>
+          </ul>
+        </div>
+        <div class="lg:col-span-3">
+          <p class="eyebrow no-rule mb-4 !text-paper/40">Get in touch</p>
+          <ul class="space-y-3 text-paper/75">
+            <li><a href="mailto:hello@projectfizika.org" class="link-underline">hello@projectfizika.org</a></li>
+            <li><a href="contact.html" class="link-underline">Volunteer with us</a></li>
+            <li><a href="contact.html" class="link-underline">Partner your school</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-14 flex flex-col gap-4 border-t border-paper/15 pt-7 sm:flex-row sm:items-center sm:justify-between">
+        <p class="eyebrow no-rule !text-paper/40 !text-[0.65rem]">© <span data-year>2026</span> Project FIZIKA — Made by students, for students.</p>
+        <a href="#main" class="eyebrow no-rule !text-paper/50 hover:!text-brass">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
