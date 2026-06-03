@@ -1,14 +1,7 @@
 # Project FIZIKA — Website
 
-A four-page marketing site for **Project FIZIKA**, a youth-led STEM enrichment
-initiative. Static HTML + Tailwind CSS — no build step, no framework, hosts free
-on GitHub Pages / Netlify / Cloudflare Pages.
-
-**Design language:** a scientific-editorial system — warm cream "paper", deep ink
-navy, brass accents, a high-character display serif (Fraunces), a clean grotesque
-body (Hanken Grotesk), and a monospace (JetBrains Mono) for labels, stats, and
-catalogue numbers.
-
+A site for **Project FIZIKA**, a youth-led STEM enrichment
+initiative. Static HTML + Tailwind CSS.
 ---
 
 ## Pages
