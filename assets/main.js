@@ -171,7 +171,10 @@
     wire(subjectBtns, (btn) => (activeSubject = btn.dataset.subjectFilter));
     wire(typeBtns, (btn) => (activeType = btn.dataset.typeFilter));
     if (search) search.addEventListener("input", apply);
-    apply();
+
+    const urlSubject = new URLSearchParams(location.search).get('subject');
+    const urlMatch = urlSubject && subjectBtns.find(b => b.dataset.subjectFilter === urlSubject);
+    if (urlMatch) urlMatch.click(); else apply();
   }
 
   /* ---------- Boot ---------- */
