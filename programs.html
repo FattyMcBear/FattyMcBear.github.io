@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="assets/tw-config.js"></script>
-  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/styles.css?v=2" />
 </head>
 
 <body class="font-sans bg-paper text-ink antialiased overflow-x-hidden">
@@ -30,10 +30,7 @@
             <g class="atom-spin" stroke="#C0902B" stroke-width="1.5"><ellipse cx="16" cy="16" rx="10" ry="4.5"/><ellipse cx="16" cy="16" rx="10" ry="4.5" transform="rotate(60 16 16)"/><ellipse cx="16" cy="16" rx="10" ry="4.5" transform="rotate(120 16 16)"/></g>
             <circle cx="16" cy="16" r="2.4" fill="#FAF6EC" />
           </svg>
-          <span class="flex flex-col leading-none">
-            <span class="font-display text-[1.35rem] font-600 tracking-tight text-ink">FIZIKA</span>
-            <span class="eyebrow no-rule mt-1 !text-[0.58rem] !tracking-[0.22em]">Project · STEM for all</span>
-          </span>
+          <span class="font-display text-[1.35rem] font-600 leading-none tracking-tight text-ink">FIZIKA</span>
         </a>
         <nav class="hidden items-center gap-9 md:flex" aria-label="Primary">
           <a href="index.html" class="link-underline text-sm font-500 text-muted hover:text-ink">Home</a>
@@ -66,7 +63,7 @@
     <!-- PAGE HERO -->
     <section class="relative isolate overflow-hidden border-b border-line">
       <div class="blueprint absolute inset-0 -z-10" aria-hidden="true"></div>
-      <div class="max-w-editorial mx-auto px-4 pb-16 pt-12 sm:px-6 lg:px-8 lg:pb-20 lg:pt-20">
+      <div class="max-w-editorial mx-auto px-4 pb-16 pt-6 sm:px-6 lg:px-8 lg:pb-20 lg:pt-14">
         <p class="eyebrow mb-7" data-reveal>Programs — How we show up</p>
         <h1 class="font-display text-[clamp(2.6rem,7vw,5.2rem)] font-500 leading-[0.96] tracking-tight text-balance lg:max-w-4xl" data-reveal data-reveal-delay="60">
           Four ways we make STEM click.
@@ -86,63 +83,95 @@
     <section class="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8">
       <div class="divide-y divide-line">
 
-        <!-- 01 — Olympiad & Contest Prep -->
+        <!-- 01 — Olympiad & Contest Prep — image RIGHT -->
         <article class="py-16 lg:py-20">
-          <div class="max-w-3xl" data-reveal>
-            <p class="eyebrow mb-4">Program 01</p>
-            <h2 class="font-display text-3xl font-500 leading-tight text-ink sm:text-4xl">Olympiad &amp; Contest Prep</h2>
-            <p class="mt-4 text-lg text-muted">Seasonal cohorts that take competition math and physics seriously — without the gatekeeping. Past-paper drills, strategy clinics, and real mentor feedback on your full written solutions.</p>
-            <dl class="mt-7 grid grid-cols-3 gap-x-6 gap-y-5 border-y border-line py-6">
-              <div><dt class="eyebrow no-rule !text-muted">Who</dt><dd class="mt-1.5 text-ink">Motivated 8–12</dd></div>
-              <div><dt class="eyebrow no-rule !text-muted">What</dt><dd class="mt-1.5 text-ink">10-week cohort</dd></div>
-              <div><dt class="eyebrow no-rule !text-muted">When</dt><dd class="mt-1.5 text-ink">Fall &amp; spring</dd></div>
-            </dl>
-            <a href="contact.html" class="mt-8 inline-flex items-center gap-2 font-600 text-ink link-underline">Join the next cohort <span aria-hidden="true">→</span></a>
+          <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16" data-reveal>
+            <div>
+              <p class="eyebrow mb-4">Program 01</p>
+              <h2 class="font-display text-3xl font-500 leading-tight text-ink sm:text-4xl">Olympiad &amp; Contest Prep</h2>
+              <p class="mt-4 text-lg text-muted">Seasonal cohorts that take competition math and physics seriously — without the gatekeeping. Past-paper drills, strategy clinics, and real mentor feedback on your full written solutions.</p>
+              <dl class="mt-7 grid grid-cols-3 gap-x-6 gap-y-5 border-y border-line py-6">
+                <div><dt class="eyebrow no-rule !text-muted">Who</dt><dd class="mt-1.5 text-ink">Motivated 8–12</dd></div>
+                <div><dt class="eyebrow no-rule !text-muted">What</dt><dd class="mt-1.5 text-ink">10-week cohort</dd></div>
+                <div><dt class="eyebrow no-rule !text-muted">When</dt><dd class="mt-1.5 text-ink">Fall &amp; spring</dd></div>
+              </dl>
+              <a href="contact.html" class="mt-8 inline-flex items-center gap-2 font-600 text-ink link-underline">Join the next cohort <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-xl2 border border-line bg-sand/30">
+              <div class="text-center">
+                <svg class="mx-auto mb-3 h-8 w-8 text-muted/30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <p class="eyebrow no-rule !text-[0.6rem] !text-muted/40">Image placeholder</p>
+              </div>
+            </div>
           </div>
         </article>
 
-        <!-- 02 — The Open Library -->
+        <!-- 02 — The Open Library — image LEFT -->
         <article class="py-16 lg:py-20">
-          <div class="max-w-3xl" data-reveal>
-            <p class="eyebrow mb-4">Program 02</p>
-            <h2 class="font-display text-3xl font-500 leading-tight text-ink sm:text-4xl">The Open Library</h2>
-            <p class="mt-4 text-lg text-muted">Not everyone can make a session — so we put our best teaching on paper. Every handout and solution set we write goes straight into a free, public library you can use any time, from anywhere.</p>
-            <dl class="mt-7 grid grid-cols-3 gap-x-6 gap-y-5 border-y border-line py-6">
-              <div><dt class="eyebrow no-rule !text-muted">Who</dt><dd class="mt-1.5 text-ink">Anyone</dd></div>
-              <div><dt class="eyebrow no-rule !text-muted">What</dt><dd class="mt-1.5 text-ink">Self-paced PDFs</dd></div>
-              <div><dt class="eyebrow no-rule !text-muted">When</dt><dd class="mt-1.5 text-ink">Always on</dd></div>
-            </dl>
-            <a href="resources.html" class="mt-8 inline-flex items-center gap-2 font-600 text-ink link-underline">Browse the library <span aria-hidden="true">→</span></a>
+          <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16" data-reveal>
+            <div>
+              <p class="eyebrow mb-4">Program 02</p>
+              <h2 class="font-display text-3xl font-500 leading-tight text-ink sm:text-4xl">The Open Library</h2>
+              <p class="mt-4 text-lg text-muted">Not everyone can make a session — so we put our best teaching on paper. Every handout and solution set we write goes straight into a free, public library you can use any time, from anywhere.</p>
+              <dl class="mt-7 grid grid-cols-3 gap-x-6 gap-y-5 border-y border-line py-6">
+                <div><dt class="eyebrow no-rule !text-muted">Who</dt><dd class="mt-1.5 text-ink">Anyone</dd></div>
+                <div><dt class="eyebrow no-rule !text-muted">What</dt><dd class="mt-1.5 text-ink">Self-paced PDFs</dd></div>
+                <div><dt class="eyebrow no-rule !text-muted">When</dt><dd class="mt-1.5 text-ink">Always on</dd></div>
+              </dl>
+              <a href="resources.html" class="mt-8 inline-flex items-center gap-2 font-600 text-ink link-underline">Browse the library <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-xl2 border border-line bg-sand/30 lg:order-first">
+              <div class="text-center">
+                <svg class="mx-auto mb-3 h-8 w-8 text-muted/30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <p class="eyebrow no-rule !text-[0.6rem] !text-muted/40">Image placeholder</p>
+              </div>
+            </div>
           </div>
         </article>
 
-        <!-- 03 — STEM Workshops -->
+        <!-- 03 — STEM Workshops — image RIGHT -->
         <article class="py-16 lg:py-20">
-          <div class="max-w-3xl" data-reveal>
-            <p class="eyebrow mb-4">Program 03</p>
-            <h2 class="font-display text-3xl font-500 leading-tight text-ink sm:text-4xl">STEM Workshops</h2>
-            <p class="mt-4 text-lg text-muted">Hands-on, concept-first workshops in physics and math where the curriculum bends to the questions in the room. We chase intuition first and pick up the formulas along the way.</p>
-            <dl class="mt-7 grid grid-cols-3 gap-x-6 gap-y-5 border-y border-line py-6">
-              <div><dt class="eyebrow no-rule !text-muted">Who</dt><dd class="mt-1.5 text-ink">Grades 9–12</dd></div>
-              <div><dt class="eyebrow no-rule !text-muted">What</dt><dd class="mt-1.5 text-ink">In-person + livestream</dd></div>
-              <div><dt class="eyebrow no-rule !text-muted">When</dt><dd class="mt-1.5 text-ink">Term-time</dd></div>
-            </dl>
-            <a href="contact.html" class="mt-8 inline-flex items-center gap-2 font-600 text-ink link-underline">Reserve a seat <span aria-hidden="true">→</span></a>
+          <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16" data-reveal>
+            <div>
+              <p class="eyebrow mb-4">Program 03</p>
+              <h2 class="font-display text-3xl font-500 leading-tight text-ink sm:text-4xl">STEM Workshops</h2>
+              <p class="mt-4 text-lg text-muted">Hands-on, concept-first workshops in physics and math where the curriculum bends to the questions in the room. We chase intuition first and pick up the formulas along the way.</p>
+              <dl class="mt-7 grid grid-cols-3 gap-x-6 gap-y-5 border-y border-line py-6">
+                <div><dt class="eyebrow no-rule !text-muted">Who</dt><dd class="mt-1.5 text-ink">Grades 9–12</dd></div>
+                <div><dt class="eyebrow no-rule !text-muted">What</dt><dd class="mt-1.5 text-ink">In-person + livestream</dd></div>
+                <div><dt class="eyebrow no-rule !text-muted">When</dt><dd class="mt-1.5 text-ink">Term-time</dd></div>
+              </dl>
+              <a href="contact.html" class="mt-8 inline-flex items-center gap-2 font-600 text-ink link-underline">Reserve a seat <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-xl2 border border-line bg-sand/30">
+              <div class="text-center">
+                <svg class="mx-auto mb-3 h-8 w-8 text-muted/30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <p class="eyebrow no-rule !text-[0.6rem] !text-muted/40">Image placeholder</p>
+              </div>
+            </div>
           </div>
         </article>
 
-        <!-- 04 — STEM Outreach (talks & dialogues) -->
+        <!-- 04 — STEM Outreach — image LEFT -->
         <article class="py-16 lg:py-20">
-          <div class="max-w-3xl" data-reveal>
-            <p class="eyebrow mb-4">Program 04</p>
-            <h2 class="font-display text-3xl font-500 leading-tight text-ink sm:text-4xl">STEM Outreach <span class="text-muted">— talks &amp; dialogues</span></h2>
-            <p class="mt-4 text-lg text-muted">We bring scientists, students, and big questions into the same room. Guest talks, panels, and open dialogues that show what STEM looks like beyond the textbook — and who gets to do it.</p>
-            <dl class="mt-7 grid grid-cols-3 gap-x-6 gap-y-5 border-y border-line py-6">
-              <div><dt class="eyebrow no-rule !text-muted">Who</dt><dd class="mt-1.5 text-ink">Schools &amp; clubs</dd></div>
-              <div><dt class="eyebrow no-rule !text-muted">What</dt><dd class="mt-1.5 text-ink">Talks &amp; panels</dd></div>
-              <div><dt class="eyebrow no-rule !text-muted">When</dt><dd class="mt-1.5 text-ink">By request</dd></div>
-            </dl>
-            <a href="contact.html" class="mt-8 inline-flex items-center gap-2 font-600 text-ink link-underline">Invite us to your school <span aria-hidden="true">→</span></a>
+          <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16" data-reveal>
+            <div>
+              <p class="eyebrow mb-4">Program 04</p>
+              <h2 class="font-display text-3xl font-500 leading-tight text-ink sm:text-4xl">STEM Outreach <span class="text-muted">— talks &amp; dialogues</span></h2>
+              <p class="mt-4 text-lg text-muted">We bring scientists, students, and big questions into the same room. Guest talks, panels, and open dialogues that show what STEM looks like beyond the textbook — and who gets to do it.</p>
+              <dl class="mt-7 grid grid-cols-3 gap-x-6 gap-y-5 border-y border-line py-6">
+                <div><dt class="eyebrow no-rule !text-muted">Who</dt><dd class="mt-1.5 text-ink">Schools &amp; clubs</dd></div>
+                <div><dt class="eyebrow no-rule !text-muted">What</dt><dd class="mt-1.5 text-ink">Talks &amp; panels</dd></div>
+                <div><dt class="eyebrow no-rule !text-muted">When</dt><dd class="mt-1.5 text-ink">By request</dd></div>
+              </dl>
+              <a href="contact.html" class="mt-8 inline-flex items-center gap-2 font-600 text-ink link-underline">Invite us to your school <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-xl2 border border-line bg-sand/30 lg:order-first">
+              <div class="text-center">
+                <svg class="mx-auto mb-3 h-8 w-8 text-muted/30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <p class="eyebrow no-rule !text-[0.6rem] !text-muted/40">Image placeholder</p>
+              </div>
+            </div>
           </div>
         </article>
 
@@ -254,6 +283,6 @@
     </div>
   </footer>
 
-  <script src="assets/main.js"></script>
+  <script src="assets/main.js?v=2"></script>
 </body>
 </html>
