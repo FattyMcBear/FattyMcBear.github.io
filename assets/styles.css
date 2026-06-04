@@ -19,6 +19,9 @@
   --clay: #a8442a;
 }
 
+/* Ensure [hidden] works even on elements with Tailwind display utilities */
+[hidden] { display: none !important; }
+
 /* ---------- Base ---------- */
 * { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 
