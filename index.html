@@ -21,7 +21,7 @@
   <!-- Tailwind (Play CDN) + shared theme -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="assets/tw-config.js"></script>
-  <link rel="stylesheet" href="assets/styles.css?v=2" />
+  <link rel="stylesheet" href="assets/styles.css?v=3" />
 </head>
 
 <body class="font-sans bg-paper text-ink antialiased overflow-x-hidden">
@@ -82,71 +82,42 @@
     <section class="relative isolate overflow-hidden">
       <div class="blueprint absolute inset-0 -z-10" aria-hidden="true"></div>
 
-      <!-- Math / physics line-art: one clean sine wave, evenly sampled (stem plot) -->
-      <svg class="hero-figure absolute inset-0 -z-10 h-full w-full hidden sm:block" viewBox="0 0 1440 720" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <!-- baseline axis -->
-        <path class="fig-draw" style="--len:980" d="M420 460 H1400" stroke="#16233B" stroke-opacity="0.14" stroke-width="1.25" stroke-linecap="round"/>
-        <!-- evenly spaced sampling stems -->
-        <g stroke="#16233B" stroke-opacity="0.18" stroke-width="1.25" stroke-linecap="round">
-          <line class="fig-dot" style="animation-delay:1.14s" x1="510" y1="460" x2="510" y2="390"/>
-          <line class="fig-dot" style="animation-delay:1.26s" x1="690" y1="460" x2="690" y2="530"/>
-          <line class="fig-dot" style="animation-delay:1.38s" x1="870" y1="460" x2="870" y2="390"/>
-          <line class="fig-dot" style="animation-delay:1.50s" x1="1050" y1="460" x2="1050" y2="530"/>
-          <line class="fig-dot" style="animation-delay:1.62s" x1="1230" y1="460" x2="1230" y2="390"/>
+      <!-- Faint scientific backdrop: a scatter of equations & symbols, fading left -->
+      <svg class="hero-figure pointer-events-none absolute inset-0 -z-10 hidden h-full w-full sm:block" viewBox="0 0 1440 720" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <!-- large ghost symbols -->
+        <g font-family="'Schibsted Grotesk', Georgia, serif" text-anchor="middle">
+          <text class="glyph" style="animation-delay:.30s" x="1185" y="305" font-size="200" fill="#C0902B" fill-opacity="0.09">π</text>
+          <text class="glyph" style="animation-delay:.46s" x="1355" y="610" font-size="210" fill="#C0902B" fill-opacity="0.08">∫</text>
+          <text class="glyph" style="animation-delay:.40s" x="800" y="560" font-size="155" fill="#16233B" fill-opacity="0.065">∑</text>
         </g>
-        <!-- sine wave -->
-        <path class="fig-draw" style="--len:1650;animation-delay:.1s" d="M420 460 C496 367 524 367 600 460 C676 553 704 553 780 460 C856 367 884 367 960 460 C1036 553 1064 553 1140 460 C1216 367 1244 367 1320 460 C1396 553 1424 553 1500 460" stroke="#C0902B" stroke-opacity="0.6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <!-- sample points sitting on the wave -->
-        <g fill="#C0902B">
-          <circle class="fig-dot" style="animation-delay:1.70s" cx="510" cy="390" r="4"/>
-          <circle class="fig-dot" style="animation-delay:1.80s" cx="690" cy="530" r="4"/>
-          <circle class="fig-dot" style="animation-delay:1.90s" cx="870" cy="390" r="4"/>
-          <circle class="fig-dot" style="animation-delay:2.00s" cx="1050" cy="530" r="4"/>
-          <circle class="fig-dot" style="animation-delay:2.10s" cx="1230" cy="390" r="4"/>
+        <!-- equations -->
+        <g font-family="'JetBrains Mono', ui-monospace, monospace" font-size="30">
+          <text class="glyph" style="animation-delay:.18s" x="930" y="150" fill="#16233B" fill-opacity="0.16">E = mc²</text>
+          <text class="glyph" style="animation-delay:.34s" x="855" y="300" fill="#8A5E12" fill-opacity="0.17">∇ · E = ρ/ε₀</text>
+          <text class="glyph" style="animation-delay:.50s" x="1120" y="450" fill="#16233B" fill-opacity="0.16">F = ma</text>
+          <text class="glyph" style="animation-delay:.62s" x="1040" y="648" fill="#16233B" fill-opacity="0.14">λ = h / p</text>
+        </g>
+        <!-- plot crosses -->
+        <g stroke="#C0902B" stroke-width="2" stroke-linecap="round" stroke-opacity="0.32">
+          <path class="glyph" style="animation-delay:.66s" d="M740 196h18M749 187v18"/>
+          <path class="glyph" style="animation-delay:.74s" d="M1296 250h18M1305 241v18"/>
+          <path class="glyph" style="animation-delay:.82s" d="M902 628h18M911 619v18"/>
+        </g>
+        <!-- nodes -->
+        <g fill="#C0902B" fill-opacity="0.4">
+          <circle class="glyph" style="animation-delay:.70s" cx="1010" cy="232" r="4.5"/>
+          <circle class="glyph" style="animation-delay:.80s" cx="705" cy="452" r="4.5"/>
+          <circle class="glyph" style="animation-delay:.90s" cx="1240" cy="540" r="4.5"/>
         </g>
       </svg>
 
-      <!-- Minimal pendulum — a quiet nod to physics -->
-      <svg class="pendulum pointer-events-none absolute right-[16%] top-36 -z-10 hidden w-36 lg:block" viewBox="0 0 200 300" fill="none" aria-hidden="true">
-        <defs>
-          <radialGradient id="bobGrad" cx="0.37" cy="0.31" r="0.78" fx="0.30" fy="0.25">
-            <stop offset="0" stop-color="#EFD08A"/>
-            <stop offset="0.46" stop-color="#C5972F"/>
-            <stop offset="1" stop-color="#7C5210"/>
-          </radialGradient>
-          <linearGradient id="rodGrad" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stop-color="#6A4C16"/>
-            <stop offset="0.5" stop-color="#D6B569"/>
-            <stop offset="1" stop-color="#664916"/>
-          </linearGradient>
-        </defs>
-
-        <!-- ceiling rail + mount plate -->
-        <line x1="50" y1="12" x2="150" y2="12" stroke="#16233B" stroke-opacity="0.18" stroke-width="2" stroke-linecap="round"/>
-        <rect x="84" y="10" width="32" height="12" rx="2.5" fill="#16233B" fill-opacity="0.85"/>
-        <circle cx="91" cy="16" r="1.2" fill="#F3EBD9" fill-opacity="0.55"/>
-        <circle cx="109" cy="16" r="1.2" fill="#F3EBD9" fill-opacity="0.55"/>
-
-        <g class="pendulum-arm">
-          <!-- rod (cylindrical sheen) -->
-          <rect x="98.2" y="22" width="3.6" height="232" rx="1.8" fill="url(#rodGrad)"/>
-          <!-- bob: a simple brass sphere -->
-          <circle cx="100" cy="264" r="18" fill="url(#bobGrad)"/>
-          <ellipse cx="92.5" cy="255.5" rx="6" ry="4.2" fill="#FFF6E0" fill-opacity="0.45" transform="rotate(-32 92.5 255.5)"/>
-        </g>
-
-        <!-- pivot hinge (sits over the rod head) -->
-        <circle cx="100" cy="22" r="4.6" fill="#16233B"/>
-        <circle cx="100" cy="22" r="1.8" fill="#F3EBD9" fill-opacity="0.9"/>
-      </svg>
-
-      <div class="max-w-editorial mx-auto grid grid-cols-1 items-end gap-12 px-4 pb-16 pt-6 sm:px-6 sm:pt-8 lg:grid-cols-12 lg:gap-10 lg:px-8 lg:pb-24 lg:pt-14">
-        <div class="lg:col-span-8">
-          <h1 class="display-xl font-display text-[clamp(2.9rem,8vw,6.2rem)] font-500 leading-[0.95] tracking-tight text-balance" data-reveal data-reveal-delay="60">
-            <span class="italic text-clay">Project FIZKA</span>
+      <div class="max-w-editorial mx-auto px-4 pb-16 pt-6 sm:px-6 sm:pt-8 lg:px-8 lg:pb-28 lg:pt-16">
+        <div class="max-w-4xl">
+          <h1 class="display-xl font-display text-[clamp(2.9rem,8vw,6.2rem)] font-500 leading-[0.95] tracking-tight" data-reveal data-reveal-delay="60">
+            <span class="italic text-clay">Project FIZIKA</span>
           </h1>
-          <p class="mt-8 max-w-prose text-lg leading-relaxed text-muted sm:text-xl" data-reveal data-reveal-delay="140">
-            We are a youth-led initiative breaking down the cost and confidence barriers to STEM enrichment. Built by students, for students.
+          <p class="mt-7 max-w-xl text-lg leading-relaxed text-muted sm:text-xl" data-reveal data-reveal-delay="140">
+            Free, student-led STEM enrichment — open to everyone.
           </p>
 
           <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center" data-reveal data-reveal-delay="220">

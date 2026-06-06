@@ -115,32 +115,17 @@ body {
           mask-image: radial-gradient(ellipse 80% 70% at 50% 35%, #000 35%, transparent 78%);
 }
 
-/* Hero math/physics line-art overlay — fades out toward the headline
-   side so type stays clean, strongest on the right. */
+/* Hero math/physics glyph field — a faint scatter of equations and symbols
+   that fades toward the headline side so the type stays crisp. */
 .hero-figure {
-  -webkit-mask-image: linear-gradient(to left, #000 34%, transparent 86%);
-          mask-image: linear-gradient(to left, #000 34%, transparent 86%);
+  -webkit-mask-image: linear-gradient(to left, #000 28%, transparent 90%);
+          mask-image: linear-gradient(to left, #000 28%, transparent 90%);
 }
-.hero-figure .fig-draw {
-  stroke-dasharray: var(--len, 1600);
-  stroke-dashoffset: var(--len, 1600);
-  animation: figdraw 2.4s cubic-bezier(0.45, 0, 0.2, 1) forwards;
+.hero-figure .glyph {
+  opacity: 0;
+  animation: glyphin 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-.hero-figure .fig-dot { opacity: 0; animation: figdot 0.5s ease forwards; }
-@keyframes figdraw { to { stroke-dashoffset: 0; } }
-@keyframes figdot { to { opacity: 1; } }
-
-/* Simple-harmonic pendulum — swings around its pivot with gravity-like easing */
-.pendulum-arm {
-  transform-box: view-box;
-  transform-origin: 100px 22px;
-  animation: swing 3.8s cubic-bezier(0.37, 0, 0.63, 1) infinite;
-}
-@keyframes swing {
-  0%,
-  100% { transform: rotate(18deg); }
-  50% { transform: rotate(-18deg); }
-}
+@keyframes glyphin { from { opacity: 0; } to { opacity: 1; } }
 
 /* ---------- Animated underline links ---------- */
 .link-underline {
