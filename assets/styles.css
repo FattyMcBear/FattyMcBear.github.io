@@ -118,8 +118,8 @@ body {
 /* Hero math/physics glyph field — a faint scatter of equations and symbols
    that fades toward the headline side so the type stays crisp. */
 .hero-figure {
-  -webkit-mask-image: linear-gradient(to left, #000 28%, transparent 90%);
-          mask-image: linear-gradient(to left, #000 28%, transparent 90%);
+  -webkit-mask-image: linear-gradient(to left, #000 40%, transparent 94%);
+          mask-image: linear-gradient(to left, #000 40%, transparent 94%);
 }
 .hero-figure .glyph {
   opacity: 0;
