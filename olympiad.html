@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Olympiad Training — Project FIZIKA</title>
+  <meta name="description" content="A timeline of Project FIZIKA's Olympiad & contest prep — SPhO and SJPO classes run with students across Singapore, the schools we've partnered with, and the original handouts we've built." />
+  <meta name="theme-color" content="#F3EBD9" />
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316233B'/%3E%3Cg fill='none' stroke='%23C0902B' stroke-width='1.5'%3E%3Cellipse cx='16' cy='16' rx='10' ry='4.5'/%3E%3Cellipse cx='16' cy='16' rx='10' ry='4.5' transform='rotate(60 16 16)'/%3E%3Cellipse cx='16' cy='16' rx='10' ry='4.5' transform='rotate(120 16 16)'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='2.4' fill='%23FAF6EC'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/tw-config.js"></script>
+  <link rel="stylesheet" href="assets/styles.css?v=3" />
+</head>
+
+<body class="font-sans bg-paper text-ink antialiased overflow-x-hidden">
+  <div class="grain" aria-hidden="true"></div>
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[70] focus:rounded-full focus:bg-ink focus:px-5 focus:py-2 focus:text-paper">Skip to content</a>
+
+  <!-- HEADER -->
+  <header class="site-header sticky top-0 z-50 border-b border-transparent">
+    <div class="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-[4.6rem] items-center justify-between gap-4">
+        <a href="index.html" class="group flex items-center gap-3" aria-label="Project FIZIKA — home">
+          <svg class="h-9 w-9 shrink-0" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <rect width="32" height="32" rx="7" fill="#16233B" />
+            <g class="atom-spin" stroke="#C0902B" stroke-width="1.5"><ellipse cx="16" cy="16" rx="10" ry="4.5"/><ellipse cx="16" cy="16" rx="10" ry="4.5" transform="rotate(60 16 16)"/><ellipse cx="16" cy="16" rx="10" ry="4.5" transform="rotate(120 16 16)"/></g>
+            <circle cx="16" cy="16" r="2.4" fill="#FAF6EC" />
+          </svg>
+          <span class="font-display text-[1.35rem] font-600 leading-none tracking-tight text-ink">FIZIKA</span>
+        </a>
+        <nav class="hidden items-center gap-9 md:flex" aria-label="Primary">
+          <a href="index.html" class="link-underline text-sm font-500 text-muted hover:text-ink">Home</a>
+          <a href="programs.html" class="link-underline text-sm font-500 text-ink">Programs</a>
+          <a href="resources.html" class="link-underline text-sm font-500 text-muted hover:text-ink">Resources</a>
+        </nav>
+        <div class="hidden md:block">
+          <a href="contact.html" class="btn btn-primary !px-5 !py-2.5 text-sm">Get involved
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <button id="menuToggle" class="md:hidden -mr-2 inline-flex h-11 w-11 items-center justify-center rounded-lg text-ink" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden-menu absolute inset-x-0 top-full origin-top border-b border-line bg-paper/95 backdrop-blur-md md:hidden">
+      <nav class="max-w-editorial mx-auto flex flex-col gap-1 px-4 py-5 sm:px-6" aria-label="Mobile">
+        <a href="index.html" class="rounded-lg px-3 py-3 font-display text-2xl text-muted hover:bg-sand hover:text-ink">Home</a>
+        <a href="programs.html" class="rounded-lg px-3 py-3 font-display text-2xl text-ink">Programs</a>
+        <a href="resources.html" class="rounded-lg px-3 py-3 font-display text-2xl text-muted hover:bg-sand hover:text-ink">Resources</a>
+        <a href="contact.html" class="btn btn-primary mt-3">Get involved</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="relative isolate overflow-hidden border-b border-line">
+      <div class="blueprint absolute inset-0 -z-10" aria-hidden="true"></div>
+      <div class="max-w-editorial mx-auto px-4 pb-16 pt-6 sm:px-6 lg:px-8 lg:pb-20 lg:pt-12">
+        <a href="programs.html" class="inline-flex items-center gap-2 text-sm font-500 text-muted transition-colors hover:text-ink" data-reveal>
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Back to programs
+        </a>
+        <h1 class="mt-8 font-display text-[clamp(2.6rem,7vw,5.2rem)] font-500 leading-[0.97] tracking-tight text-balance lg:max-w-4xl" data-reveal data-reveal-delay="60">
+          Our Olympiad Training.
+        </h1>
+        <p class="mt-7 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl" data-reveal data-reveal-delay="120">
+          From a weekly Zoom class to classrooms across Singapore — a look at who we’ve taught, the schools we’ve reached, and the resources we’ve built along the way.
+        </p>
+      </div>
+    </section>
+
+    <!-- BY THE NUMBERS -->
+    <section class="border-b border-line bg-sand/50">
+      <div class="max-w-editorial mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-14">
+        <dl class="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-4">
+          <div data-reveal>
+            <dt class="font-display text-4xl font-500 text-ink tabular sm:text-5xl">40<span class="text-brass">+</span></dt>
+            <dd class="eyebrow no-rule mt-3 !text-muted">Live sessions taught</dd>
+          </div>
+          <div data-reveal data-reveal-delay="100">
+            <dt class="font-display text-4xl font-500 text-ink tabular sm:text-5xl">55<span class="text-brass">+</span></dt>
+            <dd class="eyebrow no-rule mt-3 !text-muted">Students prepared</dd>
+          </div>
+          <div data-reveal data-reveal-delay="200">
+            <dt class="font-display text-4xl font-500 text-ink tabular sm:text-5xl">5<span class="text-brass">+</span></dt>
+            <dd class="eyebrow no-rule mt-3 !text-muted">Schools reached</dd>
+          </div>
+          <div data-reveal data-reveal-delay="300">
+            <dt class="font-display text-4xl font-500 text-ink tabular sm:text-5xl">16</dt>
+            <dd class="eyebrow no-rule mt-3 !text-muted">Lessons on YouTube</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="max-w-editorial mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <div class="max-w-2xl" data-reveal>
+        <p class="eyebrow mb-5">The story so far</p>
+        <h2 class="font-display text-4xl font-500 leading-tight tracking-tight sm:text-5xl text-balance">A growing track record.</h2>
+        <p class="mt-5 text-lg leading-relaxed text-muted">Everything below is run by volunteer students — for free. Here’s how our Olympiad &amp; contest prep has grown, one cohort at a time.</p>
+      </div>
+
+      <!-- circuit timeline -->
+      <div class="mt-16">
+
+        <!-- lead-in resistor -->
+        <div class="grid grid-cols-[3rem_minmax(0,1fr)] gap-x-4 sm:grid-cols-[5rem_minmax(0,1fr)] sm:gap-x-8" aria-hidden="true">
+          <div class="flex justify-center">
+            <svg class="h-12 w-7 text-brass/55" viewBox="0 0 24 56" fill="none"><path d="M12 0V8L5 13L19 19L5 25L19 31L5 37L19 43L12 48V56" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div></div>
+        </div>
+
+        <!-- ENTRY 01 — SPhO 2025 (image right) -->
+        <div class="grid grid-cols-[3rem_minmax(0,1fr)] gap-x-4 sm:grid-cols-[5rem_minmax(0,1fr)] sm:gap-x-8">
+          <div class="flex flex-col items-center" aria-hidden="true">
+            <span class="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-paper">
+              <svg class="h-9 w-9" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="11" fill="#F3EBD9" stroke="#C0902B" stroke-width="1.7"/><path d="M8.4 8.4 23.6 23.6M23.6 8.4 8.4 23.6" stroke="#C0902B" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </span>
+            <span class="mt-2 w-px flex-1 bg-line"></span>
+          </div>
+          <div class="pb-16 lg:pb-20" data-reveal>
+            <div class="grid grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-12">
+              <div>
+                <p class="eyebrow mb-3">2025 · Singapore Physics Olympiad</p>
+                <h3 class="font-display text-2xl font-500 leading-tight text-ink sm:text-3xl">Sixteen weeks of SPhO, taught over Zoom.</h3>
+                <p class="mt-4 leading-relaxed text-muted">From June to October 2025, we ran a weekly online class preparing 15 students for the Singapore Physics Olympiad — 16 live Zoom sessions in all. We recorded and published every lesson to YouTube so anyone could follow along, and wrote a full set of original handouts, each with illustrative worked examples and problem sets.</p>
+                <div class="mt-6 flex flex-wrap gap-2">
+                  <span class="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-3 py-1 font-mono text-xs tracking-wide text-muted"><span class="h-1.5 w-1.5 rounded-full bg-brass"></span>16 sessions</span>
+                  <span class="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-3 py-1 font-mono text-xs tracking-wide text-muted"><span class="h-1.5 w-1.5 rounded-full bg-brass"></span>15 students</span>
+                  <span class="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-3 py-1 font-mono text-xs tracking-wide text-muted"><span class="h-1.5 w-1.5 rounded-full bg-brass"></span>Weekly · Zoom</span>
+                </div>
+                <div class="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2">
+                  <a href="#" class="inline-flex items-center gap-2 font-600 text-ink link-underline">Watch the recordings on YouTube <span aria-hidden="true">→</span></a>
+                  <a href="resources.html" class="inline-flex items-center gap-2 font-600 text-ink link-underline">See the handouts <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+              <figure>
+                <div class="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-xl2 border border-line bg-sand/30">
+                  <div class="text-center">
+                    <svg class="mx-auto mb-3 h-8 w-8 text-muted/30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <p class="eyebrow no-rule !text-[0.6rem] !text-muted/40">Image placeholder</p>
+                  </div>
+                </div>
+                <figcaption class="mt-3 text-sm leading-relaxed text-muted"><span class="font-mono text-brass-ink">Fig. 1</span> — A weekly SPhO session, run live over Zoom for our first cohort.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- ENTRY 02 — SJPO / Peirce 2026 (image left) -->
+        <div class="grid grid-cols-[3rem_minmax(0,1fr)] gap-x-4 sm:grid-cols-[5rem_minmax(0,1fr)] sm:gap-x-8">
+          <div class="flex flex-col items-center" aria-hidden="true">
+            <span class="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-paper">
+              <svg class="h-9 w-9" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="11" fill="#F3EBD9" stroke="#C0902B" stroke-width="1.7"/><path d="M8.4 8.4 23.6 23.6M23.6 8.4 8.4 23.6" stroke="#C0902B" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </span>
+            <span class="mt-2 w-px flex-1 bg-line"></span>
+          </div>
+          <div class="pb-16 lg:pb-20" data-reveal>
+            <div class="grid grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-12">
+              <div class="lg:order-last">
+                <p class="eyebrow mb-3">2026 · SJPO · Peirce Secondary School</p>
+                <h3 class="font-display text-2xl font-500 leading-tight text-ink sm:text-3xl">Opening the door wider.</h3>
+                <p class="mt-4 leading-relaxed text-muted">In 2026 we partnered with Peirce Secondary School to reach students underrepresented in the Physics Olympiad — those from less-resourced schools, and girls in physics. Together we ran a 15-session Singapore Junior Physics Olympiad (SJPO) programme for around 20 students from each school.</p>
+                <div class="mt-6 flex flex-wrap gap-2">
+                  <span class="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-3 py-1 font-mono text-xs tracking-wide text-muted"><span class="h-1.5 w-1.5 rounded-full bg-brass"></span>15 sessions</span>
+                  <span class="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-3 py-1 font-mono text-xs tracking-wide text-muted"><span class="h-1.5 w-1.5 rounded-full bg-brass"></span>~20 students / school</span>
+                  <span class="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-3 py-1 font-mono text-xs tracking-wide text-muted"><span class="h-1.5 w-1.5 rounded-full bg-brass"></span>In person</span>
+                </div>
+                <div class="mt-7">
+                  <a href="contact.html" class="inline-flex items-center gap-2 font-600 text-ink link-underline">Bring this to your school <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+              <figure class="lg:order-first">
+                <div class="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-xl2 border border-line bg-sand/30">
+                  <div class="text-center">
+                    <svg class="mx-auto mb-3 h-8 w-8 text-muted/30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <p class="eyebrow no-rule !text-[0.6rem] !text-muted/40">Image placeholder</p>
+                  </div>
+                </div>
+                <figcaption class="mt-3 text-sm leading-relaxed text-muted"><span class="font-mono text-brass-ink">Fig. 2</span> — A FIZIKA member leading an SJPO class at Peirce Secondary School.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- ENTRY 03 — SJPO / Science Centre 2026 (image right) -->
+        <div class="grid grid-cols-[3rem_minmax(0,1fr)] gap-x-4 sm:grid-cols-[5rem_minmax(0,1fr)] sm:gap-x-8">
+          <div class="flex flex-col items-center" aria-hidden="true">
+            <span class="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-paper">
+              <svg class="h-9 w-9" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="11" fill="#F3EBD9" stroke="#C0902B" stroke-width="1.7"/><path d="M8.4 8.4 23.6 23.6M23.6 8.4 8.4 23.6" stroke="#C0902B" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </span>
+            <span class="mt-2 w-px flex-1 bg-line"></span>
+          </div>
+          <div class="pb-16 lg:pb-20" data-reveal>
+            <div class="grid grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-12">
+              <div>
+                <p class="eyebrow mb-3">2026 · SJPO · Science Centre Singapore</p>
+                <h3 class="font-display text-2xl font-500 leading-tight text-ink sm:text-3xl">Ten weeks at the Science Centre.</h3>
+                <p class="mt-4 leading-relaxed text-muted">Running alongside the Peirce programme, we worked with Science Centre Singapore to deliver 10 weekly SJPO classes to about 20 students drawn from schools across the island — PLMGSS, NJC, Greendale Secondary, CHIJ, and more. To support them, we wrote a comprehensive SJPO handout set, complete with worked examples and practice problems.</p>
+                <div class="mt-6 flex flex-wrap gap-2">
+                  <span class="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-3 py-1 font-mono text-xs tracking-wide text-muted"><span class="h-1.5 w-1.5 rounded-full bg-brass"></span>10 sessions</span>
+                  <span class="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-3 py-1 font-mono text-xs tracking-wide text-muted"><span class="h-1.5 w-1.5 rounded-full bg-brass"></span>~20 students</span>
+                  <span class="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-3 py-1 font-mono text-xs tracking-wide text-muted"><span class="h-1.5 w-1.5 rounded-full bg-brass"></span>5+ schools</span>
+                </div>
+                <div class="mt-7">
+                  <a href="resources.html" class="inline-flex items-center gap-2 font-600 text-ink link-underline">Browse the SJPO handouts <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+              <figure>
+                <div class="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-xl2 border border-line bg-sand/30">
+                  <div class="text-center">
+                    <svg class="mx-auto mb-3 h-8 w-8 text-muted/30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <p class="eyebrow no-rule !text-[0.6rem] !text-muted/40">Image placeholder</p>
+                  </div>
+                </div>
+                <figcaption class="mt-3 text-sm leading-relaxed text-muted"><span class="font-mono text-brass-ink">Fig. 3</span> — SJPO students from schools across Singapore at our Science Centre classes.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- terminal resistor -->
+        <div class="grid grid-cols-[3rem_minmax(0,1fr)] gap-x-4 sm:grid-cols-[5rem_minmax(0,1fr)] sm:gap-x-8" aria-hidden="true">
+          <div class="flex flex-col items-center">
+            <svg class="h-12 w-7 text-brass/55" viewBox="0 0 24 56" fill="none"><path d="M12 0V8L5 13L19 19L5 25L19 31L5 37L19 43L12 48V56" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="mt-1 h-2.5 w-2.5 rounded-full bg-brass/60"></span>
+          </div>
+          <div></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- QUOTE — teaching as the real test of understanding -->
+    <section class="bg-ink text-paper">
+      <div class="max-w-editorial mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <figure class="mx-auto max-w-4xl text-center" data-reveal>
+          <svg class="mx-auto mb-8 h-10 w-10 text-brass" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.5 7H6a3 3 0 00-3 3v7h7v-7H6.5A1.5 1.5 0 018 8.5V7zm9 0H15a3 3 0 00-3 3v7h7v-7h-3.5A1.5 1.5 0 0117 8.5V7z"/></svg>
+          <blockquote class="font-display text-3xl font-400 leading-snug tracking-tight sm:text-[2.5rem] text-balance">
+            “If you cannot explain something in simple terms, you don’t understand it well enough.”
+          </blockquote>
+          <figcaption class="mt-9 eyebrow no-rule justify-center !text-paper/60">
+            Richard P. Feynman · Nobel-winning physicist
+          </figcaption>
+          <p class="mx-auto mt-9 max-w-2xl text-lg leading-relaxed text-paper/70">
+            For our volunteers, teaching is the real exam. Explaining a concept until it clicks for a student is the surest test of how deeply you understand it yourself — which is why these programmes grow our teachers just as much as our students.
+          </p>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="relative isolate overflow-hidden border-t border-line">
+      <div class="absolute -right-40 -top-20 -z-10 h-[26rem] w-[26rem] rounded-full bg-brass/10 blur-3xl" aria-hidden="true"></div>
+      <div class="max-w-editorial mx-auto grid grid-cols-1 gap-10 px-4 py-20 sm:px-6 lg:grid-cols-12 lg:items-center lg:px-8 lg:py-28">
+        <div class="lg:col-span-8" data-reveal>
+          <h2 class="font-display text-4xl font-500 leading-tight tracking-tight sm:text-5xl lg:text-6xl text-balance">Bring this to your students.</h2>
+          <p class="mt-6 max-w-prose text-lg text-muted">Want to partner with us, host a class, or simply learn more about our Olympiad lessons? A real student reads every message — we’d love to hear from you.</p>
+        </div>
+        <div class="flex flex-col gap-3 sm:flex-row lg:col-span-4 lg:justify-end" data-reveal data-reveal-delay="120">
+          <a href="contact.html" class="btn btn-primary">Get in touch
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="programs.html" class="btn btn-ghost">See all programs</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-ink-3 text-paper">
+    <div class="max-w-editorial mx-auto px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <div class="grid grid-cols-2 gap-10 sm:grid-cols-4 lg:grid-cols-12 lg:gap-8">
+        <div class="col-span-2 lg:col-span-5">
+          <a href="index.html" class="flex items-center gap-3" aria-label="Project FIZIKA — home">
+            <svg class="h-9 w-9" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <rect width="32" height="32" rx="7" fill="#16233B" />
+              <g stroke="#C0902B" stroke-width="1.5"><ellipse cx="16" cy="16" rx="10" ry="4.5"/><ellipse cx="16" cy="16" rx="10" ry="4.5" transform="rotate(60 16 16)"/><ellipse cx="16" cy="16" rx="10" ry="4.5" transform="rotate(120 16 16)"/></g>
+              <circle cx="16" cy="16" r="2.4" fill="#FAF6EC" />
+            </svg>
+            <span class="font-display text-2xl font-600">FIZIKA</span>
+          </a>
+          <p class="mt-5 max-w-sm text-paper/65">Youth-led STEM enrichment, open to all. We build free resources and run free programs so curiosity never hits a paywall.</p>
+          <div class="mt-7 flex items-center gap-3">
+            <a href="contact.html" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-paper/20 text-paper/80 transition-colors hover:border-brass hover:text-brass" aria-label="Instagram">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="contact.html" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-paper/20 text-paper/80 transition-colors hover:border-brass hover:text-brass" aria-label="LinkedIn">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 7.5a1.94 1.94 0 11.01-3.88A1.94 1.94 0 016.94 7.5zM5.3 9h3.3v10.5H5.3V9zm5.2 0h3.16v1.43h.05c.44-.83 1.5-1.7 3.1-1.7 3.32 0 3.93 2.18 3.93 5.02v5.75h-3.3v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.33-1.96 2.7v5.18H10.5V9z"/></svg>
+            </a>
+            <a href="contact.html" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-paper/20 text-paper/80 transition-colors hover:border-brass hover:text-brass" aria-label="YouTube">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2a2.7 2.7 0 00-1.9-1.9C18 4.8 12 4.8 12 4.8s-6 0-7.7.5A2.7 2.7 0 002.4 7.2 28 28 0 002 12a28 28 0 00.4 4.8 2.7 2.7 0 001.9 1.9c1.7.5 7.7.5 7.7.5s6 0 7.7-.5a2.7 2.7 0 001.9-1.9A28 28 0 0022 12a28 28 0 00-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="lg:col-span-2 lg:col-start-7">
+          <p class="eyebrow no-rule mb-4 !text-paper/40">Explore</p>
+          <ul class="space-y-3 text-paper/75">
+            <li><a href="index.html" class="link-underline">Home</a></li>
+            <li><a href="programs.html" class="link-underline">Programs</a></li>
+            <li><a href="resources.html" class="link-underline">Resources</a></li>
+            <li><a href="contact.html" class="link-underline">Contact</a></li>
+          </ul>
+        </div>
+        <div class="lg:col-span-2">
+          <p class="eyebrow no-rule mb-4 !text-paper/40">Library</p>
+          <ul class="space-y-3 text-paper/75">
+            <li><a href="resources.html?subject=physics" class="link-underline">Physics</a></li>
+            <li><a href="resources.html?subject=mathematics" class="link-underline">Mathematics</a></li>
+          </ul>
+        </div>
+        <div class="lg:col-span-3">
+          <p class="eyebrow no-rule mb-4 !text-paper/40">Get in touch</p>
+          <ul class="space-y-3 text-paper/75">
+            <li><a href="mailto:hello@projectfizika.org" class="link-underline">hello@projectfizika.org</a></li>
+            <li><a href="contact.html" class="link-underline">Volunteer with us</a></li>
+            <li><a href="contact.html" class="link-underline">Partner your school</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-14 flex flex-col gap-4 border-t border-paper/15 pt-7 sm:flex-row sm:items-center sm:justify-between">
+        <p class="eyebrow no-rule !text-paper/40 !text-[0.65rem]">© <span data-year>2026</span> Project FIZIKA — Made by students, for students.</p>
+        <a href="#main" class="eyebrow no-rule !text-paper/50 hover:!text-brass">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/main.js?v=3"></script>
+</body>
+</html>
