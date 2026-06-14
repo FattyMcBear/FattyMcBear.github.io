@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resources — Project FIZIKA</title>
-  <meta name="description" content="A free, open library of STEM handouts and fully worked solutions written by the Project FIZIKA team. Search and filter by subject and type, then download as PDF." />
+  <meta name="description" content="A free, open library of STEM handouts and fully worked solutions written by the Project FIZIKA team. Search and filter by competition and type, then download as PDF." />
   <meta name="theme-color" content="#F3EBD9" />
   <script>document.documentElement.classList.add("js");</script>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316233B'/%3E%3Cg fill='none' stroke='%23C0902B' stroke-width='1.5'%3E%3Cellipse cx='16' cy='16' rx='10' ry='4.5'/%3E%3Cellipse cx='16' cy='16' rx='10' ry='4.5' transform='rotate(60 16 16)'/%3E%3Cellipse cx='16' cy='16' rx='10' ry='4.5' transform='rotate(120 16 16)'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='2.4' fill='%23FAF6EC'/%3E%3C/svg%3E" />
@@ -85,21 +85,21 @@
         <!-- Filters -->
         <div class="mt-4 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           <div class="flex flex-wrap items-center gap-2">
-            <span class="eyebrow no-rule mr-1 !text-muted hidden sm:inline-flex">Subject</span>
+            <span class="eyebrow no-rule mr-1 !text-muted hidden sm:inline-flex">Competition</span>
             <button data-subject-filter="all" aria-pressed="true" class="inline-flex items-center rounded-full border border-line px-3.5 py-1.5 text-sm font-500 text-muted transition-colors hover:border-ink/40 hover:text-ink aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-paper">All</button>
-            <button data-subject-filter="physics" aria-pressed="false" class="inline-flex items-center rounded-full border border-line px-3.5 py-1.5 text-sm font-500 text-muted transition-colors hover:border-ink/40 hover:text-ink aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-paper">Physics</button>
-            <button data-subject-filter="mathematics" aria-pressed="false" class="inline-flex items-center rounded-full border border-line px-3.5 py-1.5 text-sm font-500 text-muted transition-colors hover:border-ink/40 hover:text-ink aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-paper">Mathematics</button>
+            <button data-subject-filter="sjpo" aria-pressed="false" class="inline-flex items-center rounded-full border border-line px-3.5 py-1.5 text-sm font-500 text-muted transition-colors hover:border-ink/40 hover:text-ink aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-paper">SJPO</button>
+            <button data-subject-filter="spho" aria-pressed="false" class="inline-flex items-center rounded-full border border-line px-3.5 py-1.5 text-sm font-500 text-muted transition-colors hover:border-ink/40 hover:text-ink aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-paper">SPhO</button>
           </div>
           <div class="flex flex-wrap items-center gap-2">
             <span class="eyebrow no-rule mr-1 !text-muted hidden sm:inline-flex">Type</span>
             <button data-type-filter="all" aria-pressed="true" class="inline-flex items-center rounded-full border border-line px-3.5 py-1.5 text-sm font-500 text-muted transition-colors hover:border-ink/40 hover:text-ink aria-pressed:border-clay aria-pressed:bg-clay aria-pressed:text-paper">All</button>
             <button data-type-filter="handout" aria-pressed="false" class="inline-flex items-center rounded-full border border-line px-3.5 py-1.5 text-sm font-500 text-muted transition-colors hover:border-ink/40 hover:text-ink aria-pressed:border-clay aria-pressed:bg-clay aria-pressed:text-paper">Handouts</button>
             <button data-type-filter="solutions" aria-pressed="false" class="inline-flex items-center rounded-full border border-line px-3.5 py-1.5 text-sm font-500 text-muted transition-colors hover:border-ink/40 hover:text-ink aria-pressed:border-clay aria-pressed:bg-clay aria-pressed:text-paper">Solutions</button>
-            <button data-type-filter="slides" aria-pressed="false" class="inline-flex items-center rounded-full border border-line px-3.5 py-1.5 text-sm font-500 text-muted transition-colors hover:border-ink/40 hover:text-ink aria-pressed:border-clay aria-pressed:bg-clay aria-pressed:text-paper">Slides</button>
-            <button data-type-filter="problem-set" aria-pressed="false" class="inline-flex items-center rounded-full border border-line px-3.5 py-1.5 text-sm font-500 text-muted transition-colors hover:border-ink/40 hover:text-ink aria-pressed:border-clay aria-pressed:bg-clay aria-pressed:text-paper">Problem Sets</button>
+            <button data-type-filter="past-exams" aria-pressed="false" class="inline-flex items-center rounded-full border border-line px-3.5 py-1.5 text-sm font-500 text-muted transition-colors hover:border-ink/40 hover:text-ink aria-pressed:border-clay aria-pressed:bg-clay aria-pressed:text-paper">Past Exams</button>
+            <button data-type-filter="others" aria-pressed="false" class="inline-flex items-center rounded-full border border-line px-3.5 py-1.5 text-sm font-500 text-muted transition-colors hover:border-ink/40 hover:text-ink aria-pressed:border-clay aria-pressed:bg-clay aria-pressed:text-paper">Others</button>
           </div>
         </div>
-        <p class="mt-4 eyebrow no-rule !text-muted">Showing <span id="resourceCount" class="text-ink">10</span> resources</p>
+        <p class="mt-4 eyebrow no-rule !text-muted">Showing <span id="resourceCount" class="text-ink">45</span> resources</p>
       </div>
     </section>
 
@@ -107,116 +107,421 @@
     <section class="max-w-editorial mx-auto px-4 pb-24 sm:px-6 lg:px-8">
       <div id="resourceList">
 
-        <!-- PHYSICS -->
+        <!-- SJPO -->
         <div data-group>
-          <div class="flex items-baseline gap-3 pb-3 pt-12"><span class="index-num text-base">§ 1</span><h2 class="font-display text-2xl font-500 text-ink sm:text-3xl">Physics</h2></div>
+          <div class="flex items-baseline gap-3 pb-3 pt-12"><span class="index-num text-base">§ 1</span><h2 class="font-display text-2xl font-500 text-ink sm:text-3xl">Singapore Junior Physics Olympiad</h2></div>
           <div class="border-t border-line" data-reveal>
-            <div data-resource data-subject="physics" data-type="handout" data-search="rotational dynamics torque moment of inertia angular" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
-              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">PHY-014</span>
+            <div data-resource data-subject="sjpo" data-type="handout" data-search="sjpo sjpo singapore junior physics olympiad mechanics i 1d and 2d kinematics suvat equations and projectile motion handout handout" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SJPO</span>
               <div class="min-w-0 flex-1">
-                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag">Physics</span></div>
-                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Rotational Dynamics, From Scratch</h3>
-                <p class="mt-1 truncate text-sm text-muted">Torque, moment of inertia, and angular momentum built up from first principles.</p>
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag sm:hidden">SJPO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Mechanics I</h3>
+                <p class="mt-1 truncate text-sm text-muted">1D and 2D kinematics — SUVAT equations and projectile motion.</p>
               </div>
-              <span class="hidden shrink-0 text-xs text-muted tabular md:block">14 pp · 1.2 MB</span>
-              <a href="#" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download “Rotational Dynamics, From Scratch” (PDF)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+              <a href="assets/FIZIKA%20SJPO%20Handouts/Handouts/1.%20SJPO%20Mechanics%20I.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Mechanics I Handout (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
             </div>
-            <div data-resource data-subject="physics" data-type="solutions" data-search="newtonian mechanics problem set forces free body solutions" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
-              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">PHY-013</span>
+            <div data-resource data-subject="sjpo" data-type="solutions" data-search="sjpo sjpo singapore junior physics olympiad mechanics i full worked solutions to the mechanics i problems solutions solutions" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SJPO</span>
               <div class="min-w-0 flex-1">
-                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-solution">Solutions</span><span class="tag">Physics</span></div>
-                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Newtonian Mechanics — Problem Set 3 Solutions</h3>
-                <p class="mt-1 truncate text-sm text-muted">Eighteen fully worked force and free-body problems, every step shown.</p>
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-solution">Solutions</span><span class="tag sm:hidden">SJPO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Mechanics I</h3>
+                <p class="mt-1 truncate text-sm text-muted">Full worked solutions to the Mechanics I problems.</p>
               </div>
-              <span class="hidden shrink-0 text-xs text-muted tabular md:block">18 pp · 1.6 MB</span>
-              <a href="#" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download “Newtonian Mechanics Problem Set 3 Solutions” (PDF)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+              <a href="assets/FIZIKA%20SJPO%20Handouts/Solutions/1.%20SJPO%20Mech%20I%20Solns.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Mechanics I Solutions (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
             </div>
-            <div data-resource data-subject="physics" data-type="handout" data-search="electric fields gauss law flux charge electromagnetism" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
-              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">PHY-011</span>
+            <div data-resource data-subject="sjpo" data-type="handout" data-search="sjpo sjpo singapore junior physics olympiad mechanics ii work energy and power with the conservation laws handout handout" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SJPO</span>
               <div class="min-w-0 flex-1">
-                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag">Physics</span></div>
-                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Electric Fields &amp; Gauss’s Law</h3>
-                <p class="mt-1 truncate text-sm text-muted">Field lines, flux, and the symmetry tricks that make Gauss’s Law painless.</p>
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag sm:hidden">SJPO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Mechanics II</h3>
+                <p class="mt-1 truncate text-sm text-muted">Work, energy, and power, with the conservation laws.</p>
               </div>
-              <span class="hidden shrink-0 text-xs text-muted tabular md:block">12 pp · 0.9 MB</span>
-              <a href="#" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download “Electric Fields and Gauss’s Law” (PDF)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+              <a href="assets/FIZIKA%20SJPO%20Handouts/Handouts/2.%20SJPO%20Mechanics%20II.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Mechanics II Handout (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
             </div>
-            <div data-resource data-subject="physics" data-type="slides" data-search="special relativity time dilation length contraction lorentz" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
-              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">PHY-009</span>
+            <div data-resource data-subject="sjpo" data-type="solutions" data-search="sjpo sjpo singapore junior physics olympiad mechanics ii full worked solutions to the mechanics ii problems solutions solutions" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SJPO</span>
               <div class="min-w-0 flex-1">
-                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-slides">Slides</span><span class="tag">Physics</span></div>
-                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Intro to Special Relativity</h3>
-                <p class="mt-1 truncate text-sm text-muted">A gentle, visual tour of time dilation and length contraction.</p>
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-solution">Solutions</span><span class="tag sm:hidden">SJPO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Mechanics II</h3>
+                <p class="mt-1 truncate text-sm text-muted">Full worked solutions to the Mechanics II problems.</p>
               </div>
-              <span class="hidden shrink-0 text-xs text-muted tabular md:block">28 pp · 4.1 MB</span>
-              <a href="#" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download “Intro to Special Relativity” (PDF)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+              <a href="assets/FIZIKA%20SJPO%20Handouts/Solutions/2.%20SJPO%20Mech%20II%20Solns.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Mechanics II Solutions (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
             </div>
-            <div data-resource data-subject="physics" data-type="problem-set" data-search="kinematics drills projectile motion velocity acceleration practice" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
-              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">PHY-006</span>
+            <div data-resource data-subject="sjpo" data-type="handout" data-search="sjpo sjpo singapore junior physics olympiad mechanics iii circular motion angular quantities and centripetal dynamics handout handout" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SJPO</span>
               <div class="min-w-0 flex-1">
-                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-dataset">Problem Set</span><span class="tag">Physics</span></div>
-                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Kinematics Drills — 50 Problems</h3>
-                <p class="mt-1 truncate text-sm text-muted">Projectile motion and 1-D kinematics, graded easy → contest-hard.</p>
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag sm:hidden">SJPO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Mechanics III</h3>
+                <p class="mt-1 truncate text-sm text-muted">Circular motion — angular quantities and centripetal dynamics.</p>
               </div>
-              <span class="hidden shrink-0 text-xs text-muted tabular md:block">9 pp · 0.6 MB</span>
-              <a href="#" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download “Kinematics Drills 50 Problems” (PDF)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+              <a href="assets/FIZIKA%20SJPO%20Handouts/Handouts/3.%20SJPO%20Mechanics%20III.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Mechanics III Handout (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="sjpo" data-type="solutions" data-search="sjpo sjpo singapore junior physics olympiad mechanics iii full worked solutions to the mechanics iii problems solutions solutions" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SJPO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-solution">Solutions</span><span class="tag sm:hidden">SJPO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Mechanics III</h3>
+                <p class="mt-1 truncate text-sm text-muted">Full worked solutions to the Mechanics III problems.</p>
+              </div>
+              <a href="assets/FIZIKA%20SJPO%20Handouts/Solutions/3.%20SJPO%20Mech%20III%20Solns.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Mechanics III Solutions (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="sjpo" data-type="handout" data-search="sjpo sjpo singapore junior physics olympiad mechanics iv rotational mechanics moment of inertia torque and angular dynamics handout handout" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SJPO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag sm:hidden">SJPO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Mechanics IV</h3>
+                <p class="mt-1 truncate text-sm text-muted">Rotational mechanics — moment of inertia, torque, and angular dynamics.</p>
+              </div>
+              <a href="assets/FIZIKA%20SJPO%20Handouts/Handouts/4.%20SJPO%20Mechanics%20IV.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Mechanics IV Handout (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="sjpo" data-type="solutions" data-search="sjpo sjpo singapore junior physics olympiad mechanics iv full worked solutions to the mechanics iv problems solutions solutions" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SJPO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-solution">Solutions</span><span class="tag sm:hidden">SJPO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Mechanics IV</h3>
+                <p class="mt-1 truncate text-sm text-muted">Full worked solutions to the Mechanics IV problems.</p>
+              </div>
+              <a href="assets/FIZIKA%20SJPO%20Handouts/Solutions/4.%20SJPO%20Mech%20IV%20Solns.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Mechanics IV Solutions (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="sjpo" data-type="handout" data-search="sjpo sjpo singapore junior physics olympiad electromagnetism i electrostatics charge electric fields and potential handout handout" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SJPO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag sm:hidden">SJPO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Electromagnetism I</h3>
+                <p class="mt-1 truncate text-sm text-muted">Electrostatics — charge, electric fields, and potential.</p>
+              </div>
+              <a href="assets/FIZIKA%20SJPO%20Handouts/Handouts/5.%20SJPO%20EM%20I.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Electromagnetism I Handout (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="sjpo" data-type="solutions" data-search="sjpo sjpo singapore junior physics olympiad electromagnetism i full worked solutions to the electromagnetism i problems solutions solutions" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SJPO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-solution">Solutions</span><span class="tag sm:hidden">SJPO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Electromagnetism I</h3>
+                <p class="mt-1 truncate text-sm text-muted">Full worked solutions to the Electromagnetism I problems.</p>
+              </div>
+              <a href="assets/FIZIKA%20SJPO%20Handouts/Solutions/5.%20SJPO%20EM%20I%20Solns.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Electromagnetism I Solutions (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="sjpo" data-type="handout" data-search="sjpo sjpo singapore junior physics olympiad electromagnetism ii dc circuits and capacitors ohm s law and i v behaviour handout handout" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SJPO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag sm:hidden">SJPO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Electromagnetism II</h3>
+                <p class="mt-1 truncate text-sm text-muted">DC circuits and capacitors — Ohm's law and I-V behaviour.</p>
+              </div>
+              <a href="assets/FIZIKA%20SJPO%20Handouts/Handouts/6.%20SJPO%20EM%20II.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Electromagnetism II Handout (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="sjpo" data-type="solutions" data-search="sjpo sjpo singapore junior physics olympiad electromagnetism ii full worked solutions to the electromagnetism ii problems solutions solutions" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SJPO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-solution">Solutions</span><span class="tag sm:hidden">SJPO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Electromagnetism II</h3>
+                <p class="mt-1 truncate text-sm text-muted">Full worked solutions to the Electromagnetism II problems.</p>
+              </div>
+              <a href="assets/FIZIKA%20SJPO%20Handouts/Solutions/6.%20SJPO%20EM%20II%20Solns.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Electromagnetism II Solutions (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="sjpo" data-type="handout" data-search="sjpo sjpo singapore junior physics olympiad electromagnetism iii magnetism and the lorentz force up to ampere s law handout handout" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SJPO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag sm:hidden">SJPO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Electromagnetism III</h3>
+                <p class="mt-1 truncate text-sm text-muted">Magnetism and the Lorentz force, up to Ampere's law.</p>
+              </div>
+              <a href="assets/FIZIKA%20SJPO%20Handouts/Handouts/7.%20SJPO%20EM%20III.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Electromagnetism III Handout (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="sjpo" data-type="solutions" data-search="sjpo sjpo singapore junior physics olympiad electromagnetism iii full worked solutions to the electromagnetism iii problems solutions solutions" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SJPO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-solution">Solutions</span><span class="tag sm:hidden">SJPO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Electromagnetism III</h3>
+                <p class="mt-1 truncate text-sm text-muted">Full worked solutions to the Electromagnetism III problems.</p>
+              </div>
+              <a href="assets/FIZIKA%20SJPO%20Handouts/Solutions/7.%20SJPO%20EM%20III%20Solns.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Electromagnetism III Solutions (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="sjpo" data-type="handout" data-search="sjpo sjpo singapore junior physics olympiad electromagnetism iv electromagnetic induction with rlc and ac circuits handout handout" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SJPO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag sm:hidden">SJPO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Electromagnetism IV</h3>
+                <p class="mt-1 truncate text-sm text-muted">Electromagnetic induction with RLC and AC circuits.</p>
+              </div>
+              <a href="assets/FIZIKA%20SJPO%20Handouts/Handouts/8.%20SJPO%20EM%20IV.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Electromagnetism IV Handout (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="sjpo" data-type="solutions" data-search="sjpo sjpo singapore junior physics olympiad electromagnetism iv full worked solutions to the electromagnetism iv problems solutions solutions" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SJPO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-solution">Solutions</span><span class="tag sm:hidden">SJPO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Electromagnetism IV</h3>
+                <p class="mt-1 truncate text-sm text-muted">Full worked solutions to the Electromagnetism IV problems.</p>
+              </div>
+              <a href="assets/FIZIKA%20SJPO%20Handouts/Solutions/8.%20SJPO%20EM%20IV%20Solns.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Electromagnetism IV Solutions (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
             </div>
           </div>
         </div>
 
-        <!-- MATHEMATICS -->
+        <!-- SPhO -->
         <div data-group>
-          <div class="flex items-baseline gap-3 pb-3 pt-12"><span class="index-num text-base">§ 2</span><h2 class="font-display text-2xl font-500 text-ink sm:text-3xl">Mathematics</h2></div>
+          <div class="flex items-baseline gap-3 pb-3 pt-12"><span class="index-num text-base">§ 2</span><h2 class="font-display text-2xl font-500 text-ink sm:text-3xl">Singapore Physics Olympiad</h2></div>
           <div class="border-t border-line" data-reveal>
-            <div data-resource data-subject="mathematics" data-type="solutions" data-search="integration by parts calculus worked problems antiderivative" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
-              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">MAT-018</span>
+            <div data-resource data-subject="spho" data-type="handout" data-search="spho spho singapore physics olympiad math preliminaries calculus vectors and approximations the math toolkit for olympiad physics handout handout" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
               <div class="min-w-0 flex-1">
-                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-solution">Solutions</span><span class="tag">Mathematics</span></div>
-                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Integration by Parts — 30 Worked Problems</h3>
-                <p class="mt-1 truncate text-sm text-muted">From textbook-standard to “why is this so cursed,” all solved in full.</p>
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Math Preliminaries</h3>
+                <p class="mt-1 truncate text-sm text-muted">Calculus, vectors, and approximations — the math toolkit for olympiad physics.</p>
               </div>
-              <span class="hidden shrink-0 text-xs text-muted tabular md:block">22 pp · 1.9 MB</span>
-              <a href="#" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download “Integration by Parts 30 Worked Problems” (PDF)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Handouts/0.%20SPhO%20Math%20Preliminaries.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Math Preliminaries Handout (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
             </div>
-            <div data-resource data-subject="mathematics" data-type="handout" data-search="limits continuity calculus epsilon delta visual" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
-              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">MAT-015</span>
+            <div data-resource data-subject="spho" data-type="solutions" data-search="spho spho singapore physics olympiad math preliminaries full worked solutions to the math preliminaries problems solutions solutions" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
               <div class="min-w-0 flex-1">
-                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag">Mathematics</span></div>
-                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Limits &amp; Continuity, Visually</h3>
-                <p class="mt-1 truncate text-sm text-muted">The intuition behind ε–δ before the scary notation arrives.</p>
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-solution">Solutions</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Math Preliminaries</h3>
+                <p class="mt-1 truncate text-sm text-muted">Full worked solutions to the Math Preliminaries problems.</p>
               </div>
-              <span class="hidden shrink-0 text-xs text-muted tabular md:block">11 pp · 0.8 MB</span>
-              <a href="#" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download “Limits and Continuity Visually” (PDF)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Solutions/0.%20SPhO%20Math%20Preliminaries%20%28Solutions%29.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Math Preliminaries Solutions (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
             </div>
-            <div data-resource data-subject="mathematics" data-type="handout" data-search="induction proofs discrete math base case inductive step" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
-              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">MAT-012</span>
+            <div data-resource data-subject="spho" data-type="handout" data-search="spho spho singapore physics olympiad kinematics motion in one and two dimensions velocity acceleration and projectiles handout handout" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
               <div class="min-w-0 flex-1">
-                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag">Mathematics</span></div>
-                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Induction Proofs That Actually Click</h3>
-                <p class="mt-1 truncate text-sm text-muted">Base case, inductive step, and the mental model that ties them together.</p>
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Kinematics</h3>
+                <p class="mt-1 truncate text-sm text-muted">Motion in one and two dimensions: velocity, acceleration, and projectiles.</p>
               </div>
-              <span class="hidden shrink-0 text-xs text-muted tabular md:block">10 pp · 0.7 MB</span>
-              <a href="#" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download “Induction Proofs That Actually Click” (PDF)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Handouts/1.%20SPhO%20Kinematics.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Kinematics Handout (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
             </div>
-            <div data-resource data-subject="mathematics" data-type="problem-set" data-search="amc number theory modular arithmetic competition set" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
-              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">MAT-008</span>
+            <div data-resource data-subject="spho" data-type="solutions" data-search="spho spho singapore physics olympiad kinematics full worked solutions to the kinematics problems solutions solutions" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
               <div class="min-w-0 flex-1">
-                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-dataset">Problem Set</span><span class="tag">Mathematics</span></div>
-                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">AMC-Style Number Theory Set</h3>
-                <p class="mt-1 truncate text-sm text-muted">Modular arithmetic and divisibility problems with hints in the margin.</p>
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-solution">Solutions</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Kinematics</h3>
+                <p class="mt-1 truncate text-sm text-muted">Full worked solutions to the Kinematics problems.</p>
               </div>
-              <span class="hidden shrink-0 text-xs text-muted tabular md:block">7 pp · 0.5 MB</span>
-              <a href="#" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download “AMC-Style Number Theory Set” (PDF)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Solutions/1.%20SPhO%20Kinematics%20%28Solutions%29.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Kinematics Solutions (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
             </div>
-            <div data-resource data-subject="mathematics" data-type="slides" data-search="linear algebra vectors matrices transformations span basis" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
-              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">MAT-004</span>
+            <div data-resource data-subject="spho" data-type="handout" data-search="spho spho singapore physics olympiad dynamics newton s laws forces friction and momentum handout handout" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
               <div class="min-w-0 flex-1">
-                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-slides">Slides</span><span class="tag">Mathematics</span></div>
-                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Linear Algebra: Vectors to Matrices</h3>
-                <p class="mt-1 truncate text-sm text-muted">A geometric intro to span, basis, and linear transformations.</p>
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Dynamics</h3>
+                <p class="mt-1 truncate text-sm text-muted">Newton's laws, forces, friction, and momentum.</p>
               </div>
-              <span class="hidden shrink-0 text-xs text-muted tabular md:block">31 pp · 5.0 MB</span>
-              <a href="#" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download “Linear Algebra Vectors to Matrices” (PDF)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Handouts/2.%20SPhO%20Dynamics.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Dynamics Handout (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="spho" data-type="solutions" data-search="spho spho singapore physics olympiad dynamics full worked solutions to the dynamics problems solutions solutions" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-solution">Solutions</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Dynamics</h3>
+                <p class="mt-1 truncate text-sm text-muted">Full worked solutions to the Dynamics problems.</p>
+              </div>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Solutions/2.%20SPhO%20Dynamics%20%28Solutions%29.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Dynamics Solutions (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="spho" data-type="handout" data-search="spho spho singapore physics olympiad oscillations simple harmonic motion springs pendulums and resonance handout handout" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Oscillations</h3>
+                <p class="mt-1 truncate text-sm text-muted">Simple harmonic motion, springs, pendulums, and resonance.</p>
+              </div>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Handouts/3.%20SPhO%20Oscillations.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Oscillations Handout (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="spho" data-type="solutions" data-search="spho spho singapore physics olympiad oscillations full worked solutions to the oscillations problems solutions solutions" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-solution">Solutions</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Oscillations</h3>
+                <p class="mt-1 truncate text-sm text-muted">Full worked solutions to the Oscillations problems.</p>
+              </div>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Solutions/3.%20SPhO%20Oscillations%20%28Solutions%29.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Oscillations Solutions (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="spho" data-type="handout" data-search="spho spho singapore physics olympiad rotation torque moment of inertia and the angular momentum of rigid bodies handout handout" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Rotation</h3>
+                <p class="mt-1 truncate text-sm text-muted">Torque, moment of inertia, and the angular momentum of rigid bodies.</p>
+              </div>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Handouts/4.%20SPhO%20Rotation.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Rotation Handout (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="spho" data-type="solutions" data-search="spho spho singapore physics olympiad rotation full worked solutions to the rotation problems solutions solutions" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-solution">Solutions</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Rotation</h3>
+                <p class="mt-1 truncate text-sm text-muted">Full worked solutions to the Rotation problems.</p>
+              </div>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Solutions/4.%20SPhO%20Rotation%20%28Solutions%29.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Rotation Solutions (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="spho" data-type="handout" data-search="spho spho singapore physics olympiad gravitation newtonian gravity orbits and kepler s laws handout handout" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Gravitation</h3>
+                <p class="mt-1 truncate text-sm text-muted">Newtonian gravity, orbits, and Kepler's laws.</p>
+              </div>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Handouts/5.%20SPhO%20Gravitation.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Gravitation Handout (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="spho" data-type="solutions" data-search="spho spho singapore physics olympiad gravitation full worked solutions to the gravitation problems solutions solutions" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-solution">Solutions</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Gravitation</h3>
+                <p class="mt-1 truncate text-sm text-muted">Full worked solutions to the Gravitation problems.</p>
+              </div>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Solutions/5.%20SPhO%20Gravitation%20%28Solutions%29.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Gravitation Solutions (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="spho" data-type="handout" data-search="spho spho singapore physics olympiad electrostatics electric charge fields potential and gauss s law handout handout" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Electrostatics</h3>
+                <p class="mt-1 truncate text-sm text-muted">Electric charge, fields, potential, and Gauss's law.</p>
+              </div>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Handouts/6.%20SPhO%20Electrostatics.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Electrostatics Handout (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="spho" data-type="solutions" data-search="spho spho singapore physics olympiad electrostatics full worked solutions to the electrostatics problems solutions solutions" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-solution">Solutions</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Electrostatics</h3>
+                <p class="mt-1 truncate text-sm text-muted">Full worked solutions to the Electrostatics problems.</p>
+              </div>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Solutions/6.%20SPhO%20Electrostatics%20%28Solutions%29.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Electrostatics Solutions (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="spho" data-type="handout" data-search="spho spho singapore physics olympiad dc circuits resistor networks kirchhoff s laws and circuit analysis handout handout" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">DC Circuits</h3>
+                <p class="mt-1 truncate text-sm text-muted">Resistor networks, Kirchhoff's laws, and circuit analysis.</p>
+              </div>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Handouts/7.%20SPhO%20DC%20Circuits.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download DC Circuits Handout (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="spho" data-type="solutions" data-search="spho spho singapore physics olympiad dc circuits full worked solutions to the dc circuits problems solutions solutions" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-solution">Solutions</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">DC Circuits</h3>
+                <p class="mt-1 truncate text-sm text-muted">Full worked solutions to the DC Circuits problems.</p>
+              </div>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Solutions/7.%20SPhO%20DC%20Circuits%20%28Solutions%29.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download DC Circuits Solutions (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="spho" data-type="handout" data-search="spho spho singapore physics olympiad magnetism lorentz force magnetic fields and the forces on moving charges and currents handout handout" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Magnetism &amp; Lorentz Force</h3>
+                <p class="mt-1 truncate text-sm text-muted">Magnetic fields and the forces on moving charges and currents.</p>
+              </div>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Handouts/8.%20SPhO%20Magnetism%20%26%20Lorentz%20Force.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Magnetism &amp; Lorentz Force Handout (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="spho" data-type="solutions" data-search="spho spho singapore physics olympiad magnetism lorentz force full worked solutions to the magnetism lorentz force problems solutions solutions" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-solution">Solutions</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Magnetism &amp; Lorentz Force</h3>
+                <p class="mt-1 truncate text-sm text-muted">Full worked solutions to the Magnetism &amp; Lorentz Force problems.</p>
+              </div>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Solutions/8.%20SPhO%20Magnetostatics%20%26%20Lorentz%20Force%20%28Solutions%29.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Magnetism &amp; Lorentz Force Solutions (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="spho" data-type="handout" data-search="spho spho singapore physics olympiad electromagnetic induction faraday s and lenz s laws emf and inductance handout handout" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Electromagnetic Induction</h3>
+                <p class="mt-1 truncate text-sm text-muted">Faraday's and Lenz's laws, EMF, and inductance.</p>
+              </div>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Handouts/9.%20SPhO%20Electromagnetic%20Induction.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Electromagnetic Induction Handout (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="spho" data-type="solutions" data-search="spho spho singapore physics olympiad electromagnetic induction full worked solutions to the electromagnetic induction problems solutions solutions" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-solution">Solutions</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Electromagnetic Induction</h3>
+                <p class="mt-1 truncate text-sm text-muted">Full worked solutions to the Electromagnetic Induction problems.</p>
+              </div>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Solutions/9.%20SPhO%20Electromagnetic%20Induction%20%28Solutions%29.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Electromagnetic Induction Solutions (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="spho" data-type="handout" data-search="spho spho singapore physics olympiad ac rlc circuits alternating current impedance and resonance in rlc circuits handout handout" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">AC &amp; RLC Circuits</h3>
+                <p class="mt-1 truncate text-sm text-muted">Alternating current, impedance, and resonance in RLC circuits.</p>
+              </div>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Handouts/10.%20SPhO%20AC%20%26%20RLC%20Circuits.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download AC &amp; RLC Circuits Handout (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="spho" data-type="handout" data-search="spho spho singapore physics olympiad ideal gases thermodynamics kinetic theory the gas laws and the laws of thermodynamics handout handout" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Ideal Gases &amp; Thermodynamics</h3>
+                <p class="mt-1 truncate text-sm text-muted">Kinetic theory, the gas laws, and the laws of thermodynamics.</p>
+              </div>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Handouts/11.%20SPhO%20Ideal%20Gases%20%26%20Thermodynamic%20Laws.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Ideal Gases &amp; Thermodynamics Handout (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="spho" data-type="solutions" data-search="spho spho singapore physics olympiad ideal gases thermodynamics full worked solutions to the ideal gases thermodynamics problems solutions solutions" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-solution">Solutions</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Ideal Gases &amp; Thermodynamics</h3>
+                <p class="mt-1 truncate text-sm text-muted">Full worked solutions to the Ideal Gases &amp; Thermodynamics problems.</p>
+              </div>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Solutions/11.%20SPhO%20Ideal%20Gases%20%26%20Thermodynamic%20Laws%20%28Solutions%29.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Ideal Gases &amp; Thermodynamics Solutions (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="spho" data-type="handout" data-search="spho spho singapore physics olympiad heat transfer conduction convection and thermal radiation handout handout" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Heat Transfer</h3>
+                <p class="mt-1 truncate text-sm text-muted">Conduction, convection, and thermal radiation.</p>
+              </div>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Handouts/12.%20SPhO%20Heat%20Transfer.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Heat Transfer Handout (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="spho" data-type="solutions" data-search="spho spho singapore physics olympiad heat transfer full worked solutions to the heat transfer problems solutions solutions" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-solution">Solutions</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Heat Transfer</h3>
+                <p class="mt-1 truncate text-sm text-muted">Full worked solutions to the Heat Transfer problems.</p>
+              </div>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Solutions/12.%20SPhO%20Heat%20Transfer%20%28Solutions%29.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Heat Transfer Solutions (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="spho" data-type="handout" data-search="spho spho singapore physics olympiad waves optics wave behaviour interference diffraction and geometric optics handout handout" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Waves &amp; Optics</h3>
+                <p class="mt-1 truncate text-sm text-muted">Wave behaviour, interference, diffraction, and geometric optics.</p>
+              </div>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Handouts/13.%20SPhO%20Waves%20%26%20Optics.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Waves &amp; Optics Handout (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="spho" data-type="handout" data-search="spho spho singapore physics olympiad special relativity time dilation length contraction and lorentz transformations handout handout" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Special Relativity</h3>
+                <p class="mt-1 truncate text-sm text-muted">Time dilation, length contraction, and Lorentz transformations.</p>
+              </div>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Handouts/14.%20SPhO%20Special%20Relativity.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Special Relativity Handout (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="spho" data-type="solutions" data-search="spho spho singapore physics olympiad special relativity full worked solutions to the special relativity problems solutions solutions" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-solution">Solutions</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Special Relativity</h3>
+                <p class="mt-1 truncate text-sm text-muted">Full worked solutions to the Special Relativity problems.</p>
+              </div>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Solutions/14.%20SPhO%20Special%20Relativity%20%28Solutions%29.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Special Relativity Solutions (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
+            </div>
+            <div data-resource data-subject="spho" data-type="handout" data-search="spho spho singapore physics olympiad quantum nuclear physics photons atomic structure and radioactive decay handout handout" class="resource-row group flex items-center gap-4 border-b border-line px-2 py-5 sm:gap-6 sm:px-4">
+              <span class="index-num hidden w-16 shrink-0 text-xs sm:block">SPhO</span>
+              <div class="min-w-0 flex-1">
+                <div class="mb-1.5 flex flex-wrap items-center gap-2"><span class="badge badge-handout">Handout</span><span class="tag sm:hidden">SPhO</span></div>
+                <h3 class="truncate font-display text-lg font-500 text-ink sm:text-xl">Quantum &amp; Nuclear Physics</h3>
+                <p class="mt-1 truncate text-sm text-muted">Photons, atomic structure, and radioactive decay.</p>
+              </div>
+              <a href="assets/FIZIKA%20SPhO%20Handouts/Handouts/15.%20SPhO%20Quantum%20%26%20Nuclear%20Physics.pdf" target="_blank" rel="noopener" class="btn btn-ghost shrink-0 !px-4 !py-2 text-sm" aria-label="Download Quantum &amp; Nuclear Physics Handout (PDF, opens in new tab)"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hidden sm:inline">PDF</span></a>
             </div>
           </div>
         </div>
@@ -225,7 +530,7 @@
         <div id="resourceEmpty" hidden class="py-24 text-center">
           <svg class="mx-auto h-12 w-12 text-line" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3" stroke-linecap="round"/></svg>
           <h3 class="mt-5 font-display text-2xl font-500 text-ink">No resources match that.</h3>
-          <p class="mt-2 text-muted">Try a different subject, type, or search term — or clear your filters.</p>
+          <p class="mt-2 text-muted">Try a different competition, type, or search term — or clear your filters.</p>
         </div>
       </div>
 
@@ -270,8 +575,8 @@
         <div class="lg:col-span-2">
           <p class="eyebrow no-rule mb-4 !text-paper/40">Library</p>
           <ul class="space-y-3 text-paper/75">
-            <li><a href="resources.html?subject=physics" class="link-underline">Physics</a></li>
-            <li><a href="resources.html?subject=mathematics" class="link-underline">Mathematics</a></li>
+            <li><a href="resources.html?subject=sjpo" class="link-underline">SJPO</a></li>
+            <li><a href="resources.html?subject=spho" class="link-underline">SPhO</a></li>
           </ul>
         </div>
         <div class="lg:col-span-3">
