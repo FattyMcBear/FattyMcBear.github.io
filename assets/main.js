@@ -153,23 +153,29 @@
       if (countEl) countEl.textContent = String(shown);
     };
 
-    const wire = (buttons, setter) => {
+    const wire = (buttons, setter, toggle) => {
       buttons.forEach((btn) => {
         btn.addEventListener("click", () => {
+          const wasActive = btn.getAttribute("aria-pressed") === "true";
           buttons.forEach((b) => {
             b.setAttribute("aria-pressed", "false");
             b.classList.remove("is-active");
           });
-          btn.setAttribute("aria-pressed", "true");
-          btn.classList.add("is-active");
-          setter(btn);
+          // With no "All" button, clicking the active chip again clears the filter.
+          if (toggle && wasActive) {
+            setter(null);
+          } else {
+            btn.setAttribute("aria-pressed", "true");
+            btn.classList.add("is-active");
+            setter(btn);
+          }
           apply();
         });
       });
     };
 
-    wire(subjectBtns, (btn) => (activeSubject = btn.dataset.subjectFilter));
-    wire(typeBtns, (btn) => (activeType = btn.dataset.typeFilter));
+    wire(subjectBtns, (btn) => (activeSubject = btn ? btn.dataset.subjectFilter : "all"));
+    wire(typeBtns, (btn) => (activeType = btn ? btn.dataset.typeFilter : "all"), true);
     if (search) search.addEventListener("input", apply);
 
     const urlSubject = new URLSearchParams(location.search).get('subject');
