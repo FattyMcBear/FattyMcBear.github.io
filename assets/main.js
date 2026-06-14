@@ -178,9 +178,12 @@
     wire(typeBtns, (btn) => (activeType = btn ? btn.dataset.typeFilter : "all"), true);
     if (search) search.addEventListener("input", apply);
 
-    const urlSubject = new URLSearchParams(location.search).get('subject');
-    const urlMatch = urlSubject && subjectBtns.find(b => b.dataset.subjectFilter === urlSubject);
-    if (urlMatch) urlMatch.click(); else apply();
+    const params = new URLSearchParams(location.search);
+    const subjMatch = subjectBtns.find(b => b.dataset.subjectFilter === params.get('subject'));
+    const typeMatch = typeBtns.find(b => b.dataset.typeFilter === params.get('type'));
+    if (subjMatch) subjMatch.click();
+    if (typeMatch) typeMatch.click();
+    if (!subjMatch && !typeMatch) apply();
   }
 
   /* ---------- Boot ---------- */
