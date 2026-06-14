@@ -174,7 +174,7 @@
       });
     };
 
-    wire(subjectBtns, (btn) => (activeSubject = btn ? btn.dataset.subjectFilter : "all"));
+    wire(subjectBtns, (btn) => (activeSubject = btn ? btn.dataset.subjectFilter : "all"), true);
     wire(typeBtns, (btn) => (activeType = btn ? btn.dataset.typeFilter : "all"), true);
     if (search) search.addEventListener("input", apply);
 
